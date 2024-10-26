@@ -1,0 +1,192 @@
+
+
+body {
+    background-color: #0b0b0b; /* Color de fondo oscuro para toda la página */
+    color: #ffffff; /* Color de texto blanco para todo el body */
+    font-family: 'Roboto', sans-serif; /* Fuente general */
+    margin: 0; /* Eliminar márgenes por defecto */
+    padding: 0; /* Eliminar relleno por defecto */
+  }
+
+
+nav {
+    position: fixed;
+    width: 100%;
+    background-color: #474242;
+    padding: 10px;
+    top: 0;
+    z-index: 1000;
+    border-radius: 0 0 10px 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-top: 2px solid rgb(92, 92, 255); /* Borde superior azul */
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: space-between; /* Coloca logo a la izquierda y opciones a la derecha */
+    align-items: center;
+    max-width: 1200px; /* Ajusta el ancho máximo si es necesario */
+    margin: auto 0; /* Centra la barra de navegación en la página */
+    padding: 0 20px; /* Espaciado lateral para evitar que el contenido toque los bordes */
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Espacio a la derecha del logo */
+  }
+  
+  .logo img {
+    height: 50px; /* Ajusta el tamaño del logo */
+    border-radius: 50%; /* Opcional: haz que la imagen sea circular */
+    margin-right: 10px; /* Espaciado entre la imagen y el texto */
+  }
+  
+  .nav-options {
+    list-style-type: none;
+    display: flex;
+    gap: 20px; /* Espacio entre opciones */
+    margin: 0; /* Elimina márgenes */
+  }
+  
+  .nav-options li {
+    display: inline;
+  }
+  
+  .nav-options li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px; /* Espaciado */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave */
+  }
+  
+  .nav-options li a:hover {
+    background-color: #555; /* Color de fondo al pasar el mouse */
+    color: #fff; /* Color del texto al pasar el mouse */
+    border-radius: 5px; /* Bordes redondeados en el efecto hover */
+  }
+  
+  /* Secciones */
+  section {
+    padding: 50px 20px;
+    margin-top: 60px; /* Deja espacio para que no quede detrás de la barra de navegación */
+  }
+  
+
+  .sobre-mi {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en una columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    padding: 50px 20px;
+  }
+  
+ 
+  
+  .sobre-mi-container {
+    display: flex;
+    max-width: 1200px; /* Ajusta el ancho máximo según sea necesario */
+    width: 100%;
+    align-items: center; /* Alinea verticalmente los elementos */
+  }
+  
+  .foto {
+    flex: 1; /* Ocupa el 50% del espacio disponible */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 20px; /* Espacio a la derecha de la foto */
+  }
+  
+  .foto img {
+    width: 200px; /* Ajusta el tamaño de la imagen */
+    height: 200px; /* Mantiene la misma altura */
+    border-radius: 50%; /* Hace que la imagen sea redondeada */
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+  }
+  
+  .descripcion {
+    flex: 2; /* Ocupa el 50% del espacio disponible */
+
+  }
+  
+  .descripcion p {
+    margin: 10px 0; /* Espacio entre párrafos */
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px; /* Espacio superior para el botón */
+    background-color: #007bff; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    text-decoration: none; /* Sin subrayado */
+    border-radius: 5px; /* Bordes redondeados del botón */
+    transition: background-color 0.3s; /* Transición suave */
+  }
+  
+  .btn:hover {
+    background-color: #0056b3; /* Color del botón al pasar el mouse */
+  }
+  
+  .titulo {
+    font-size: 2.5em; /* Tamaño de fuente llamativo */
+    font-weight: bold; /* Negrita para el título */
+    margin: 0; /* Elimina márgenes */
+    text-align: center; /* Centra el texto del título */
+    color: #c5c5c5; /* Color del texto */
+    transition: color 0.3s, transform 0.3s; /* Transiciones suaves para el color y transformación */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra para el texto */
+  }
+  
+  .titulo:hover {
+    color: #007bff; /* Cambia el color al pasar el mouse */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del título al pasar el mouse */
+  }
+  
+  .linea {
+    width: 80%; /* Ancho de la línea */
+    height: 2px; /* Grosor de la línea */
+    background-color: blue; /* Color de la línea */
+    margin: 10px auto; /* Centra la línea y deja un espacio */
+    transition: background-color 0.3s, transform 0.3s; /* Transición suave */
+  }
+  
+  .linea:hover {
+    background-color: #007bff; /* Cambia el color de la línea al pasar el mouse */
+    transform: scaleY(1.2); /* Aumenta ligeramente la altura de la línea al pasar el mouse */
+  }
+  
+/* 
+inicio  */
+
+#inicio {
+    position: relative; /* Para posicionar el texto en relación al carrusel */
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    overflow: hidden; /* Evita el desbordamiento */
+  }
+  
+  .carousel-inner img {
+    width: 100%;
+    height: 70%; /* Asegúrate de que la imagen ocupe toda la sección */
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+  }
+  
+  .carousel-caption {
+    position: absolute;
+    bottom: 30%; /* Ajusta según sea necesario */
+    left: 50%;
+    transform: translateX(-50%);
+    color: white; /* Color del texto */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Sombra para mejorar la legibilidad */
+  }
+  
+  .carousel-item {
+    height: 100vh; /* Asegura que cada ítem del carrusel tenga la altura completa */
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para los controles */
+    border-radius: 50%; /* Borde redondeado */
+  }
+  
