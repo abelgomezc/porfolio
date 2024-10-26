@@ -182,7 +182,7 @@ inicio  */
     bottom: 30%; /* Ajusta según sea necesario */
     left: 50%;
     transform: translateX(-50%);
-    color: white; /* Color del texto */
+    color: rgb(252, 89, 7); /* Color del texto */
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Sombra para mejorar la legibilidad */
   }
   
@@ -193,7 +193,7 @@ inicio  */
   .carousel-control-prev-icon,
   .carousel-control-next-icon {
     background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para los controles */
-    border-radius: 50%; /* Borde redondeado */
+    border-radius: 70%; /* Borde redondeado */
   }
   
 
