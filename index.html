@@ -23,6 +23,12 @@
 </script>
 
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+
 </head>
 <body >
 
@@ -82,9 +88,10 @@
   
   
   <section id="sobre-mi" class="sobre-mi">
-    <h1 class="titulo">Sobre Mí </h1>
-    <div class="linea"></div> <!-- Línea debajo del título -->
+   
     <div class="matrix-container">
+      <h1 class="titulo">Sobre Mí </h1>
+      <div class="linea"></div>
       <div class="sobre-mi-container">
         <div class="foto">
           <img src="./recursos/img/yo.jpg" alt="Mi Foto" />
@@ -103,10 +110,11 @@
 
   <canvas id="locoalien"></canvas>
   <section id="habilidades" class="habilidades">
-    <h1 class="titulo">Habilidades</h1>
-    <div class="linea"></div>
+  
     <!-- <canvas id="locoalien"></canvas> -->
     <div class="matrix-container">
+      <h1 class="titulo">Habilidades</h1>
+      <div class="linea"></div>
       <div class="habilidades-container">
         <!-- Java -->
         <div class="habilidad">
@@ -229,58 +237,19 @@
   
   
   <section id="proyectos">
-    <h1 class="titulo" >Proyectos</h1>
-    <div class="linea"></div> 
-    <p>Estos son algunos de mis proyectos...</p>
-  </section>
-  
- <!-- <section id="contacto">
-    <div class="matrix-container">
-        <h1 class="titulo">Contacto</h1>
-        <div class="linea"></div>
-        
-        <div class="contact-content"> 
-            <div class="form-wrapper">
-              <div id="alert-message" class="alert-message" style="display:none;"></div>
-                <form id="form">
-                    <div class="field form-group">
-                        <label for="from_name">Nombre</label>
-                        <input type="text" name="from_name" id="from_name" class="form-control">
-                    </div>
-                    <div class="field form-group">
-                        <label for="emil_id">Correo Electrónico</label>
-                        <input type="text" name="emil_id" id="emil_id" class="form-control">
-                    </div>
-                    <div class="field form-group">
-                        <label for="message">Mensaje</label>
-                        <textarea class="form-control" name="message" id="message" rows="4" placeholder="Escribe tu mensaje aquí"></textarea>
-                    </div>
-                    <input type="submit" id="button" class="btn btn-primary btn-block contact-btn" value="Enviar Mensaje">
-                </form>
-            </div> 
 
-            <div class="social-container">
-              <h5>Sígueme en mis redes</h5>
-              <p>Conéctate conmigo para ver mis proyectos, ideas y más</p>
-              
-              <div class="social-icons"> 
-                  <a href="https://www.linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                  <a href="https://www.x.com" target="_blank" class="social-icon"><i class="fab fa-x"></i></a> 
-                  <a href="https://www.github.com" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
-                  <a href="https://www.facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
-                  <a href="https://www.instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-                  <a href="https://www.youtube.com" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
-              </div>
-          
-            
-          </div>
-          
-        
-          </div>
-          
-        </div> 
+
+    <div class="matrix-container">
+      <h1 class="titulo">Proyectos</h1>
+      <div class="linea"></div> 
+      <div class="owl-carousel" id="proyectos-carousel">
+      
+        <!-- Las tarjetas se generarán aquí -->
     </div>
-</section>  -->
+    </div>
+   
+</section>
+
 
 
 
@@ -348,13 +317,78 @@
 
 
 
-
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <!-- <script src="index.js"></script> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+      // Lista de proyectos
+      const proyectos = [
+          {
+              nombre: "Proyecto 1",
+              imagen: "recursos/img/proyecto1.jpg",
+              linkDemo: "#",
+              linkGithub: "https://github.com/usuario/proyecto1"
+          },
+          {
+              nombre: "Proyecto 2",
+              imagen: "recursos/img/proyecto2.jpg",
+              linkDemo: "#",
+              linkGithub: "https://github.com/usuario/proyecto2"
+          },
+          {
+              nombre: "Proyecto 3",
+              imagen: "recursos/img/proyecto3.jpg",
+              linkDemo: "#",
+              linkGithub: "https://github.com/usuario/proyecto3"
+          },
+          // Agrega más proyectos según sea necesario
+      ];
+  
+      // Función para generar las tarjetas
+      function generarTarjetas() {
+          const contenedor = document.getElementById("proyectos-carousel");
+  
+          proyectos.forEach(proyecto => {
+              const card = document.createElement("div");
+              card.className = "proyecto_card"; // Clase CSS para el estilo de la tarjeta
+              card.innerHTML = `
+                  <img src="${proyecto.imagen}" alt="${proyecto.nombre}">
+                  <h5>${proyecto.nombre}</h5>
+                  <div class="button-container">
+                      <a href="${proyecto.linkDemo}" class="btn btn-link"><i class="fas fa-desktop"></i></a>
+                      <a href="${proyecto.linkGithub}" class="btn btn-link"><i class="fab fa-github"></i></a>
+                  </div>
+              `;
+              contenedor.appendChild(card);
+          });
+      }
+  
+      // Llama a la función para generar las tarjetas
+      generarTarjetas();
+  
+      // Inicializa el carrusel
+      $(document).ready(function(){
+          $("#proyectos-carousel").owlCarousel({
+              loop: true,
+              margin: 1,
+              nav: true,
+              responsive: {
+                  0: { items: 1 },
+                  600: { items: 2 },
+                  1000: { items: 3 } // Ajusta el número de tarjetas visibles
+              }
+          });
+      });
+  </script>
+
+
+
 
 <!-- mandar email  -->
 <script>
@@ -504,6 +538,7 @@
       dibujar();
   }
 </script>
+
 
 
 
