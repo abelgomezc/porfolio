@@ -5,9 +5,6 @@ body {
   margin: 0; /* Eliminar márgenes por defecto */
 }
 
-
-
-
 nav {
   position: fixed;
   width: 100%;
@@ -54,6 +51,8 @@ nav {
   margin: 0; /* Sin margen */
 }
 
+
+.logofooter img,
 .logo img {
   height: 50px; /* Ajusta el tamaño del logo */
   border-radius: 50%; /* Opcional: hace que la imagen sea circular */
@@ -90,14 +89,14 @@ nav {
 
   section {
       position: relative; /* Permite posicionar elementos dentro de esta sección */
-      padding: 50px 20px;
+      padding: 30px 1px;
       margin-top: 50px; /* Deja espacio para que no quede detrás de la barra de navegación */
       z-index: 1; /* Asegura que el contenido de la sección esté delante del canvas */
       color: #fff; /* Color del texto por defecto */
-    
       border-radius: 10px; /* Bordes redondeados */
+      
   }
-
+ 
   .sobre-mi {
     display: flex;
     flex-direction: column; /* Coloca los elementos en una columna */
@@ -196,7 +195,7 @@ inicio  */
   
   .carousel-inner img {
     width: 100%;
-    height: 70%; /* Asegúrate de que la imagen ocupe toda la sección */
+    height: 90%; /* Asegúrate de que la imagen ocupe toda la sección */
     object-fit: cover; /* Mantiene la proporción de la imagen */
   }
   
@@ -205,7 +204,7 @@ inicio  */
     bottom: 30%; /* Ajusta según sea necesario */
     left: 50%;
     transform: translateX(-50%);
-    color: rgb(252, 89, 7); /* Color del texto */
+    color: rgb(254, 207, 37); /* Color del texto */
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Sombra para mejorar la legibilidad */
   }
   
@@ -315,6 +314,11 @@ inicio  */
 
 
 
+#contacto {
+  position: relative; /* Para posicionar el texto en relación al carrusel */
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  overflow: hidden; /* Evita el desbordamiento */
+}
 
 
 
@@ -322,21 +326,22 @@ inicio  */
   background: rgba(70, 70, 70, 0.8); /* Fondo más oscuro para el formulario */
   border-radius: 10px; /* Bordes redondeados */
   padding: 20px; /* Espaciado interno */
+  
 }
 
 
 
 
-
-.contact-content { 
+.contact-content {
   display: flex; /* Usar Flexbox para el contenedor */
   justify-content: space-between; /* Espacio entre los elementos */
-  align-items: flex-start; /* Alinear verticalmente los elementos al inicio */
+  align-items: stretch; /* Alinear verticalmente los elementos al inicio */
   margin-top: 20px; /* Margen superior para separar del título */
+
 }
 
 .form-wrapper {
-  background: rgba(0, 0, 0, 0.8); /* Fondo más oscuro para el formulario */
+  background: rgba(54, 54, 61, 0.8); /* Fondo más oscuro para el formulario */
   border-radius: 10px; /* Bordes redondeados */
   padding: 20px; /* Espaciado interno */
   max-width: 600px; /* Ancho máximo del formulario */
@@ -348,13 +353,43 @@ inicio  */
 }
 
 .social-container {
-  display: flex; /* Usar Flexbox para el contenedor de redes sociales */
-  flex-direction: column; /* Alinear íconos en columna */
-  align-items: center; /* Centrar horizontalmente */
-  flex: 1; /* Permitir que ocupe espacio flexible */
-  max-width: 200px; /* Ancho máximo para la sección de redes */
-  margin: 0 20px; /* Añadir margen a los lados para espaciar */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  padding: 20px;
+  background-image: url('recursos/img/13.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  text-align: center;
+  overflow: hidden;
 }
+
+.social-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0); /* Ajusta el nivel de brillo */
+  z-index: 1; /* Detrás del contenido */
+}
+
+.social-container h5,
+.social-container p,
+.social-icons {
+  position: relative;
+  z-index: 2; /* Por encima del overlay */
+  color: #ffffff; /* Color brillante para los elementos internos */
+}
+
+
+
+
 
 .social-icons {
   margin-top: 10px; /* Espacio entre el título y los íconos */
@@ -406,12 +441,12 @@ inicio  */
 .social-icons .social-icon {
   font-size: 1.5rem;
   margin: 0 10px;
-  color: #6d6df5;
+  color: #4fbb1d;
   transition: transform 0.3s, color 0.3s;
 }
 
 .social-icons .social-icon:hover {
-  color: #fff;
+  color: #00d6fc;
   transform: scale(1.2);
 }
 
@@ -436,3 +471,110 @@ inicio  */
   cursor: pointer;
   color: #fff;
 }
+
+
+
+
+
+
+
+
+
+
+footer {
+  position: relative;
+  background-color: #5a5a5a;
+  color: #ddd;
+  padding: 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex; /* Usar flex para alinear el contenido en línea */
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+}
+
+.logofooter {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espacio entre el logo y el texto */
+  margin-bottom: 10px; /* Espacio inferior para separación del resto del contenido */
+}
+
+.logofooter img {
+  width: 40px; /* Ajusta el tamaño de la imagen */
+  height: auto;
+}
+
+.footer-nav {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px; /* Espacio inferior entre navegación y texto */
+}
+
+.footer-nav {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer-nav a {
+  color: #292944;
+  text-decoration: none;
+}
+
+.footer-nav a:hover {
+  color: #fff;
+}
+
+.waves {
+  position: absolute;
+  top: 0; /* Posicionar en la parte superior del footer */
+  left: 0;
+  width: 100%;
+  height: 100%; /* Que ocupe toda la altura del footer */
+  overflow: hidden;
+  line-height: 0;
+  z-index: 1;
+}
+
+.wave-svg {
+  position: relative;
+  display: block;
+  width: calc(200% + 1.3px);
+  height: 100%; /* Ajuste de altura para cubrir todo el footer */
+  animation: wave-animation 10s infinite linear;
+}
+
+.wave {
+  fill: #4385ff;
+  opacity: 0.8;
+}
+
+@keyframes wave-animation {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-50%);
+  }
+}
+
+
+
+
+
+
+
+
