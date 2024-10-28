@@ -483,7 +483,8 @@ inicio  */
 
 footer {
   position: relative;
-  background-color: #5a5a5a;
+  /* background-color: #6a696e; */
+  background: rgba(0, 0, 0, 0.8); /* Fondo más oscuro para el formulario */
   color: #ddd;
   padding: 20px;
   text-align: center;
