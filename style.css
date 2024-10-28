@@ -414,3 +414,25 @@ inicio  */
   color: #fff;
   transform: scale(1.2);
 }
+
+
+
+.alert-message {
+  background-color: #6d6df5; /* Color de fondo */
+  color: #fff; /* Color del texto */
+  padding: 10px 20px; /* Espaciado interno */
+  border-radius: 8px; /* Bordes redondeados */
+  margin-top: 20px; /* Espacio arriba del mensaje */
+  display: none; /* Ocultar por defecto */
+  text-align: center; /* Centrar texto */
+  font-weight: bold; /* Hacer el texto más llamativo */
+  position: relative; /* Para posicionar el botón de cierre */
+}
+
+.alert-message .close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  color: #fff;
+}
