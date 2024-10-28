@@ -341,7 +341,7 @@ inicio  */
 }
 
 .form-wrapper {
-  background: rgba(54, 54, 61, 0.8); /* Fondo más oscuro para el formulario */
+  background: rgba(106, 106, 106, 0.8); /* Fondo más oscuro para el formulario */
   border-radius: 10px; /* Bordes redondeados */
   padding: 20px; /* Espaciado interno */
   max-width: 600px; /* Ancho máximo del formulario */
