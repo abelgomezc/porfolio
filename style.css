@@ -89,7 +89,7 @@ nav {
 
   section {
       position: relative; /* Permite posicionar elementos dentro de esta sección */
-      padding: 30px 1px;
+      padding: 30px 10px;
       margin-top: 50px; /* Deja espacio para que no quede detrás de la barra de navegación */
       z-index: 1; /* Asegura que el contenido de la sección esté delante del canvas */
       color: #fff; /* Color del texto por defecto */
@@ -315,6 +315,7 @@ inicio  */
 
 
 #contacto {
+
   position: relative; /* Para posicionar el texto en relación al carrusel */
   height: 100vh; /* Ocupa toda la altura de la ventana */
   overflow: hidden; /* Evita el desbordamiento */
@@ -326,6 +327,7 @@ inicio  */
   background: rgba(70, 70, 70, 0.8); /* Fondo más oscuro para el formulario */
   border-radius: 10px; /* Bordes redondeados */
   padding: 20px; /* Espaciado interno */
+  width: 100%;
   
 }
 
@@ -333,6 +335,7 @@ inicio  */
 
 
 .contact-content {
+  width: 100%;
   display: flex; /* Usar Flexbox para el contenedor */
   justify-content: space-between; /* Espacio entre los elementos */
   align-items: stretch; /* Alinear verticalmente los elementos al inicio */
@@ -352,16 +355,15 @@ inicio  */
   align-items: stretch; /* Alinear horizontalmente */
 }
 
-.social-container {
+.social-container { 
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-
   padding: 20px;
-  background-image: url('recursos/img/13.png');
+  background-image: url('recursos/img/14.png');
   background-size: cover;
   background-position: center;
   border-radius: 10px;
@@ -379,13 +381,20 @@ inicio  */
   z-index: 1; /* Detrás del contenido */
 }
 
-.social-container h5,
+.social-container h1,
 .social-container p,
 .social-icons {
   position: relative;
   z-index: 2; /* Por encima del overlay */
-  color: #ffffff; /* Color brillante para los elementos internos */
+  color: #3cc324; /* Color brillante para los elementos internos */
+  font-size: 1.5em; /* Aumenta el tamaño de la fuente de h5 y p */
 }
+
+.social-icons i {
+  font-size: 2em; /* Aumenta el tamaño de los iconos */
+  margin: 0 10px; /* Espaciado entre iconos */
+}
+
 
 
 
@@ -441,7 +450,7 @@ inicio  */
 .social-icons .social-icon {
   font-size: 1.5rem;
   margin: 0 10px;
-  color: #4fbb1d;
+  color: #50fc00;
   transition: transform 0.3s, color 0.3s;
 }
 
@@ -476,21 +485,21 @@ inicio  */
 
 /* Estilos generales */
 #proyectos {
-  height: 100%;
+  width: 100%;
+  padding: 20px 0;
   color: #fff;
 }
-
 
 
 .proyecto_card {
   background-color: #333;
   border-radius: 10px;
   color: #fff;
-  width: 250px;
+  width: 220px; /* Ajusta el ancho de la tarjeta */
   flex-shrink: 0;
-  padding: 10px;
+  padding: 10px; /* Reduce el padding */
   text-align: center;
-  margin: 0 1px;
+  margin: 0 1px; /* Mantén un margen lateral pequeño */
 }
 
 .proyecto_card img {
@@ -511,6 +520,25 @@ inicio  */
   color: #ffdd57;
 }
 
+.owl-nav button {
+  background: none;
+  border: none;
+  color: #ffdd57;
+  font-size: 30px; /* Tamaño de la flecha */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000; /* Asegura que las flechas estén sobre las tarjetas */
+}
+
+.owl-nav .owl-prev {
+  left: 30px; /* Ajusta la posición izquierda de la flecha izquierda */
+
+}
+
+.owl-nav .owl-next {
+  right: 30px; /* Ajusta la posición derecha de la flecha derecha */
+}
 
 
 

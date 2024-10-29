@@ -280,7 +280,7 @@
           </div> <!-- Fin de .form-wrapper -->
 
           <div class="social-container">
-            <h5>Sígueme en mis redes</h5>
+            <h1>Sígueme en mis redes</h1>
             <p>Conéctate conmigo para ver mis proyectos, ideas y más</p>
             
             <div class="social-icons"> 
@@ -327,66 +327,78 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script>
-      // Lista de proyectos
-      const proyectos = [
-          {
-              nombre: "Proyecto 1",
-              imagen: "recursos/img/proyecto1.jpg",
-              linkDemo: "#",
-              linkGithub: "https://github.com/usuario/proyecto1"
-          },
-          {
-              nombre: "Proyecto 2",
-              imagen: "recursos/img/proyecto2.jpg",
-              linkDemo: "#",
-              linkGithub: "https://github.com/usuario/proyecto2"
-          },
-          {
-              nombre: "Proyecto 3",
-              imagen: "recursos/img/proyecto3.jpg",
-              linkDemo: "#",
-              linkGithub: "https://github.com/usuario/proyecto3"
-          },
-          // Agrega más proyectos según sea necesario
-      ];
-  
-      // Función para generar las tarjetas
-      function generarTarjetas() {
-          const contenedor = document.getElementById("proyectos-carousel");
-  
-          proyectos.forEach(proyecto => {
-              const card = document.createElement("div");
-              card.className = "proyecto_card"; // Clase CSS para el estilo de la tarjeta
-              card.innerHTML = `
-                  <img src="${proyecto.imagen}" alt="${proyecto.nombre}">
-                  <h5>${proyecto.nombre}</h5>
-                  <div class="button-container">
-                      <a href="${proyecto.linkDemo}" class="btn btn-link"><i class="fas fa-desktop"></i></a>
-                      <a href="${proyecto.linkGithub}" class="btn btn-link"><i class="fab fa-github"></i></a>
-                  </div>
-              `;
-              contenedor.appendChild(card);
-          });
-      }
-  
-      // Llama a la función para generar las tarjetas
-      generarTarjetas();
-  
-      // Inicializa el carrusel
-      $(document).ready(function(){
-          $("#proyectos-carousel").owlCarousel({
-              loop: true,
-              margin: 1,
-              nav: true,
-              responsive: {
-                  0: { items: 1 },
-                  600: { items: 2 },
-                  1000: { items: 3 } // Ajusta el número de tarjetas visibles
-              }
-          });
-      });
-  </script>
+    // Lista de proyectos
+    const proyectos = [
+        {
+            nombre: "Proyecto 1",
+            imagen: "recursos/img/proyecto1.jpg", // Asegúrate de que esta ruta es correcta
+            linkDemo: "#",
+            linkGithub: "https://github.com/usuario/proyecto1"
+        },
+        {
+            nombre: "Proyecto 2",
+            imagen: "recursos/img/proyecto2.jpg", // Asegúrate de que esta ruta es correcta
+            linkDemo: "#",
+            linkGithub: "https://github.com/usuario/proyecto2"
+        },
+        {
+            nombre: "Proyecto 3",
+            imagen: "recursos/img/proyecto3.jpg", // Asegúrate de que esta ruta es correcta
+            linkDemo: "#",
+            linkGithub: "https://github.com/usuario/proyecto3"
+        },
+        {
+            nombre: "Proyecto 3",
+            imagen: "recursos/img/proyecto3.jpg", // Asegúrate de que esta ruta es correcta
+            linkDemo: "#",
+            linkGithub: "https://github.com/usuario/proyecto3"
+        },
+        {
+            nombre: "Proyecto 3",
+            imagen: "recursos/img/proyecto3.jpg", // Asegúrate de que esta ruta es correcta
+            linkDemo: "#",
+            linkGithub: "https://github.com/usuario/proyecto3"
+        },
+        // Agrega más proyectos según sea necesario
+    ];
 
+    // Función para generar las tarjetas
+    function generarTarjetas() {
+        const contenedor = document.getElementById("proyectos-carousel");
+
+        proyectos.forEach(proyecto => {
+            const card = document.createElement("div");
+            card.className = "proyecto_card"; // Clase CSS para el estilo de la tarjeta
+            card.innerHTML = `
+                <img src="${proyecto.imagen}" alt="${proyecto.nombre}">
+                <h5>${proyecto.nombre}</h5>
+                <div class="button-container">
+                    <a href="${proyecto.linkDemo}" class="btn btn-link"><i class="fas fa-desktop"></i></a>
+                    <a href="${proyecto.linkGithub}" class="btn btn-link"><i class="fab fa-github"></i></a>
+                </div>
+            `;
+            contenedor.appendChild(card);
+        });
+    }
+
+    // Llama a la función para generar las tarjetas
+    generarTarjetas();
+
+    // Inicializa el carrusel
+    $(document).ready(function(){
+        $("#proyectos-carousel").owlCarousel({
+            loop: true,
+            margin: 5, // Cambiado a 5 para reducir la separación
+            nav: true,
+            navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'], // Flechas personalizadas
+            responsive: {
+                0: { items: 1 },
+                600: { items: 2 },
+                1000: { items: 3 } // Ajusta el número de tarjetas visibles
+            }
+        });
+    });
+</script>
 
 
 
