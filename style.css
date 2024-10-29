@@ -495,7 +495,7 @@ inicio  */
   background-color: #333;
   border-radius: 10px;
   color: #fff;
-  width: 220px; /* Ajusta el ancho de la tarjeta */
+  width: 450px; /* Ajusta el ancho de la tarjeta */
   flex-shrink: 0;
   padding: 10px; /* Reduce el padding */
   text-align: center;
@@ -505,19 +505,20 @@ inicio  */
 .proyecto_card img {
   width: 100%;
   border-radius: 10px;
-  height: 150px;
+  height: 190px;
   object-fit: cover;
 }
 
 .button-container {
   display: flex;
+  height: 70px;
   justify-content: center;
   gap: 10px;
 }
 
 .button-container .btn {
   font-size: 1.5em;
-  color: #ffdd57;
+  color: #ffffff;
 }
 
 .owl-nav button {
