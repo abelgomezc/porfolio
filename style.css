@@ -68,8 +68,8 @@ nav {
 
 .logo span {
   font-family: 'Lobster', cursive; /* Cambia 'Lobster' por el nombre de la fuente que elegiste */
-  font-size: 1.8em; /* Ajusta el tamaño de la fuente según tus preferencias */
-  color: #bbf7c0; /* Color llamativo (puedes cambiarlo) */
+  font-size: 1.5em; /* Ajusta el tamaño de la fuente según tus preferencias */
+  color: #acacac; /* Color llamativo (puedes cambiarlo) */
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Añadir sombra de texto para darle más profundidad */
 }
 
@@ -363,7 +363,7 @@ inicio  */
   justify-content: center;
   width: 100%;
   padding: 20px;
-  background-image: url('recursos/img/14.png');
+  background-image: url('recursos/img/13.png');
   background-size: cover;
   background-position: center;
   border-radius: 10px;
@@ -576,31 +576,12 @@ footer {
   height: auto;
 }
 
-.footer-nav {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 10px; /* Espacio inferior entre navegación y texto */
-}
 
-.footer-nav {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
 
-.footer-nav a {
-  color: #292944;
-  text-decoration: none;
-}
 
-.footer-nav a:hover {
-  color: #fff;
-}
+
+
+
 
 .waves {
   position: absolute;
@@ -618,12 +599,12 @@ footer {
   display: block;
   width: calc(200% + 1.3px);
   height: 100%; /* Ajuste de altura para cubrir todo el footer */
-  animation: wave-animation 10s infinite linear;
+  animation: wave-animation 9s infinite linear;
 }
 
 .wave {
-  fill: #4385ff;
-  opacity: 0.8;
+  fill: #5a6cfb;
+  opacity: 0.9;
 }
 
 @keyframes wave-animation {
