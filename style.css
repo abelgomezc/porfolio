@@ -17,13 +17,30 @@ main {
 }
 
 
+.logofooter img ,
+.logo img {
+  height: 50px; /* Ajusta el tamaño del logo */
+  border-radius: 50%; /* Opcional: hace que la imagen sea circular */
+  margin-right: 10px; /* Espacio entre imagen y texto */
+}
 
+/* nav {
+  position: fixed;
+  width: 100%;
+  background-color: #474242;
+  padding: 10px 0;
+  top: 0;
+  z-index: 1000;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 2px 5px rgba(158, 1, 248, 0.2);
+  border-top: 2px solid rgb(109, 109, 245);
+} */
 
 nav {
   position: fixed;
   width: 100%;
   background-color: #474242;
-  padding: 10px 0; /* Solo padding arriba y abajo */
+  padding: 10px 0;
   top: 0;
   z-index: 1000;
   border-radius: 0 0 10px 10px;
@@ -64,12 +81,7 @@ nav {
   align-items: center;
   margin: 0; /* Sin margen */
 }
-.logofooter img ,
-.logo img {
-  height: 50px; /* Ajusta el tamaño del logo */
-  border-radius: 50%; /* Opcional: hace que la imagen sea circular */
-  margin-right: 10px; /* Espacio entre imagen y texto */
-}
+
 
 .nav-options li a:hover {
   background-color: #555; /* Color de fondo al pasar el mouse */
@@ -125,25 +137,33 @@ nav {
       height: 100%;
       z-index: 0; /* Asegura que el canvas esté detrás del contenido */
   }
-  section {
-    position: relative;
-    padding: 30px 10px;
-    margin-top: 50px;
-    z-index: 1;
-    color: #fff;
-    border-radius: 10px;
+/* Primera sección con margen superior mayor */
+section:first-of-type {
+  margin-top: 20px; /* Espacio adicional solo para la primera sección */
+}
+
+/* Estilo general para todas las secciones */
+section {
+  position: relative;
+  padding: 30px 10px;
+  margin-top: 1px; /* Espacio reducido entre las secciones */
+  z-index: 1;
+  color: #fff;
+  border-radius: 10px;
 }
 
 .sobre-mi {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
     padding: 50px 20px;
 }
 
 .sobre-mi-container {
     display: flex;
     width: 100%;
+    height: 100%;
     align-items: center;
 }
 
@@ -263,66 +283,66 @@ inicio  */
 
 #inicio {
   position: relative;
-  height: 100vh;
+  height: 100vh; /* Altura total de la ventana */
   overflow: hidden;
 }
 
-.carousel-inner img {
-  width: 100%;
-  height: 90%;
-  object-fit: cover;
+.carousel-inner {
+  height: 100%; /* Altura total del carrusel */
+}
+
+.carousel-item {
+  height: 100%; /* Cada item del carrusel ocupa el 100% del contenedor */
+}
+
+.carousel-item img {
+  width: 100%; /* Asegura que la imagen ocupe todo el ancho */
+  height: 80vh; /* Altura fija para todas las imágenes en escritorio */
+  object-fit: cover; /* Cubre el contenedor sin deformar */
 }
 
 .carousel-caption {
   position: absolute;
-  bottom: 30%;
+  bottom: 20%; /* Posiciona el texto más arriba */
   left: 50%;
   transform: translateX(-50%);
   color: rgb(254, 207, 37);
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
   text-align: center;
+  width: 90%; /* Asegura que el texto no se pegue a los bordes */
 }
 
-.carousel-item {
-  height: 100vh;
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 70%;
+/* Ajustes para el tamaño de las leyendas */
+.carousel-caption h2 {
+  font-size: 2em; /* Tamaño de fuente base */
 }
 
 /* Media Query para pantallas más pequeñas */
 @media (max-width: 768px) {
-  #inicio {
-      height: auto; /* Ajusta la altura automáticamente en pantallas pequeñas */
-  }
-  
-  .carousel-inner img {
-      height: auto; /* Deja que las imágenes ajusten su altura automáticamente */
+  .carousel-item img {
+    height: 40vh; /* Altura menor en móviles, ajusta según sea necesario */
   }
 
   .carousel-caption {
-      bottom: 20%; /* Baja un poco la posición de la leyenda */
-      font-size: 1.2em; /* Ajusta el tamaño de la fuente para que sea más legible en móviles */
-      padding: 0 15px; /* Agrega algo de padding para evitar que el texto se pegue a los bordes */
+    bottom: 15%; /* Posición del texto en dispositivos más pequeños */
+    font-size: 1.2em; /* Tamaño de fuente más pequeño */
+    padding: 0 15px; /* Agrega padding */
   }
 }
 
-/* Media Query para pantallas aún más pequeñas (como móviles en orientación vertical) */
 @media (max-width: 480px) {
   .carousel-caption {
-      bottom: 15%;
-      font-size: 1em;
+    bottom: 10%; /* Aumenta el margen inferior */
+    font-size: 1em; /* Tamaño de fuente más pequeño para móviles */
   }
 
   .carousel-control-prev-icon,
   .carousel-control-next-icon {
-      width: 30px;
-      height: 30px;
+    width: 30px; /* Tamaño de las flechas */
+    height: 30px; /* Tamaño de las flechas */
   }
 }
+
 
 
 
@@ -437,16 +457,16 @@ inicio  */
   flex-direction: row; /* Mantenemos en fila para pantallas grandes */
   justify-content: space-between; /* Espaciado entre elementos */
   align-items: stretch; 
-  margin-top: 20px; 
+  margin-top: 10px; 
 }
 
 .form-wrapper {
   background: rgba(106, 106, 106, 0.8);
   border-radius: 10px;
-  padding: 20px;
-  max-width: 600px;
+  padding: 10px;
+  max-width: 300px;
   width: 100%;
-  margin: 20px;
+  margin: 10px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
