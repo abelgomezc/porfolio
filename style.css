@@ -1,9 +1,23 @@
-body {
- 
+/* Aplica flexbox al contenedor principal */
+body, html {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
   color: #ffffff; /* Color de texto blanco para todo el body */
   font-family: 'Roboto', sans-serif; /* Fuente general */
   margin: 0; /* Eliminar márgenes por defecto */
 }
+
+/* Asegúrate de que el contenido principal crezca para ocupar el espacio */
+main {
+  flex: 0.5;
+  padding: 20px; /* Ajusta el padding según lo necesario */
+
+}
+
+
+
 
 nav {
   position: fixed;
@@ -50,9 +64,7 @@ nav {
   align-items: center;
   margin: 0; /* Sin margen */
 }
-
-
-.logofooter img,
+.logofooter img ,
 .logo img {
   height: 50px; /* Ajusta el tamaño del logo */
   border-radius: 50%; /* Opcional: hace que la imagen sea circular */
@@ -66,11 +78,38 @@ nav {
 }
 
 
+
 .logo span {
   font-family: 'Lobster', cursive; /* Cambia 'Lobster' por el nombre de la fuente que elegiste */
   font-size: 1.5em; /* Ajusta el tamaño de la fuente según tus preferencias */
   color: #acacac; /* Color llamativo (puedes cambiarlo) */
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Añadir sombra de texto para darle más profundidad */
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+  .nav-options {
+    display: none; /* Ocultar opciones por defecto en pantallas pequeñas */
+    flex-direction: column; /* Cambiar a disposición vertical */
+    width: 100%; /* Asegurar que ocupe el 100% del ancho */
+    background-color: #474242; /* Fondo del menú */
+    position: absolute; /* Posición absoluta para que no afecte el flujo del documento */
+    top: 60px; /* Ajustar según el alto de la barra de navegación */
+    left: 0;
+    z-index: 999; /* Asegurar que esté por encima de otros elementos */
+  }
+
+  .nav-options.show {
+    display: flex; /* Mostrar opciones cuando se haga clic en el menú */
+  }
+
+  .navbar-toggler {
+    border: none; /* Sin borde en el botón hamburguesa */
+  }
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='2' d='M5 7h20M5 15h20M5 23h20'/%3E%3C/svg%3E");
 }
 
   
@@ -86,71 +125,106 @@ nav {
       height: 100%;
       z-index: 0; /* Asegura que el canvas esté detrás del contenido */
   }
-
   section {
-      position: relative; /* Permite posicionar elementos dentro de esta sección */
-      padding: 30px 10px;
-      margin-top: 50px; /* Deja espacio para que no quede detrás de la barra de navegación */
-      z-index: 1; /* Asegura que el contenido de la sección esté delante del canvas */
-      color: #fff; /* Color del texto por defecto */
-      border-radius: 10px; /* Bordes redondeados */
-      
-  }
- 
-  .sobre-mi {
-    display: flex;
-    flex-direction: column; /* Coloca los elementos en una columna */
-    align-items: center; /* Centra los elementos horizontalmente */
-    padding: 50px 20px;
-  }
-  
- 
-  
-  .sobre-mi-container {
-    display: flex;
+    position: relative;
+    padding: 30px 10px;
+    margin-top: 50px;
+    z-index: 1;
+    color: #fff;
+    border-radius: 10px;
+}
 
+.sobre-mi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.sobre-mi-container {
+    display: flex;
     width: 100%;
-    align-items: center; /* Alinea verticalmente los elementos */
-  }
-  
-  .foto {
-    flex: 1; /* Ocupa el 50% del espacio disponible */
+    align-items: center;
+}
+
+.foto {
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-right: 20px; /* Espacio a la derecha de la foto */
-  }
-  
-  .foto img {
-    width: 200px; /* Ajusta el tamaño de la imagen */
-    height: 200px; /* Mantiene la misma altura */
-    border-radius: 50%; /* Hace que la imagen sea redondeada */
-    object-fit: cover; /* Mantiene la proporción de la imagen */
-  }
-  
-  .descripcion {
-    flex: 2; /* Ocupa el 50% del espacio disponible */
+    padding-right: 20px;
+}
 
-  }
-  
-  .descripcion p {
-    margin: 10px 0; /* Espacio entre párrafos */
-  }
-  
-  .btn {
+.foto img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.descripcion {
+    flex: 2;
+}
+
+.descripcion p {
+    margin: 10px 0;
+}
+
+.btn {
     display: inline-block;
     padding: 10px 20px;
-    margin-top: 20px; /* Espacio superior para el botón */
-    background-color: #007bff; /* Color de fondo del botón */
-    color: white; /* Color del texto del botón */
-    text-decoration: none; /* Sin subrayado */
-    border-radius: 5px; /* Bordes redondeados del botón */
-    transition: background-color 0.3s; /* Transición suave */
-  }
-  
-  .btn:hover {
-    background-color: #0056b3; /* Color del botón al pasar el mouse */
-  }
+    margin-top: 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Media Query para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .sobre-mi-container {
+        flex-direction: column; /* Coloca los elementos en una columna */
+        align-items: center; /* Centra los elementos */
+        text-align: center;
+    }
+
+    .foto {
+        padding-right: 0; /* Quita el padding lateral en móvil */
+        margin-bottom: 20px; /* Agrega espacio debajo de la imagen */
+    }
+
+    .foto img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .descripcion {
+        flex: unset;
+    }
+}
+
+/* Media Query para pantallas aún más pequeñas (como móviles en orientación vertical) */
+@media (max-width: 480px) {
+    .sobre-mi {
+        padding: 20px 10px;
+    }
+
+    .foto img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+}
+
   
   .titulo {
     font-size: 2.5em; /* Tamaño de fuente llamativo */
@@ -188,36 +262,67 @@ nav {
 inicio  */
 
 #inicio {
-    position: relative; /* Para posicionar el texto en relación al carrusel */
-    height: 100vh; /* Ocupa toda la altura de la ventana */
-    overflow: hidden; /* Evita el desbordamiento */
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.carousel-inner img {
+  width: 100%;
+  height: 90%;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(254, 207, 37);
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+
+.carousel-item {
+  height: 100vh;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 70%;
+}
+
+/* Media Query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  #inicio {
+      height: auto; /* Ajusta la altura automáticamente en pantallas pequeñas */
   }
   
   .carousel-inner img {
-    width: 100%;
-    height: 90%; /* Asegúrate de que la imagen ocupe toda la sección */
-    object-fit: cover; /* Mantiene la proporción de la imagen */
+      height: auto; /* Deja que las imágenes ajusten su altura automáticamente */
   }
-  
+
   .carousel-caption {
-    position: absolute;
-    bottom: 30%; /* Ajusta según sea necesario */
-    left: 50%;
-    transform: translateX(-50%);
-    color: rgb(254, 207, 37); /* Color del texto */
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Sombra para mejorar la legibilidad */
+      bottom: 20%; /* Baja un poco la posición de la leyenda */
+      font-size: 1.2em; /* Ajusta el tamaño de la fuente para que sea más legible en móviles */
+      padding: 0 15px; /* Agrega algo de padding para evitar que el texto se pegue a los bordes */
   }
-  
-  .carousel-item {
-    height: 100vh; /* Asegura que cada ítem del carrusel tenga la altura completa */
+}
+
+/* Media Query para pantallas aún más pequeñas (como móviles en orientación vertical) */
+@media (max-width: 480px) {
+  .carousel-caption {
+      bottom: 15%;
+      font-size: 1em;
   }
-  
+
   .carousel-control-prev-icon,
   .carousel-control-next-icon {
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para los controles */
-    border-radius: 70%; /* Borde redondeado */
+      width: 30px;
+      height: 30px;
   }
-  
+}
 
 
 
@@ -312,17 +417,6 @@ inicio  */
 }
 
 
-
-
-#contacto {
-
-  position: relative; /* Para posicionar el texto en relación al carrusel */
-  height: 100vh; /* Ocupa toda la altura de la ventana */
-  overflow: hidden; /* Evita el desbordamiento */
-}
-
-
-
 .matrix-container {
   background: rgba(70, 70, 70, 0.8); /* Fondo más oscuro para el formulario */
   border-radius: 10px; /* Bordes redondeados */
@@ -331,31 +425,35 @@ inicio  */
   
 }
 
-
-
+#contacto {
+  position: relative;
+  min-height: 100vh; /* Cambiado a min-height */
+  overflow: auto; /* Permitir desplazamiento si es necesario */
+}
 
 .contact-content {
   width: 100%;
-  display: flex; /* Usar Flexbox para el contenedor */
-  justify-content: space-between; /* Espacio entre los elementos */
-  align-items: stretch; /* Alinear verticalmente los elementos al inicio */
-  margin-top: 20px; /* Margen superior para separar del título */
-
+  display: flex; 
+  flex-direction: row; /* Mantenemos en fila para pantallas grandes */
+  justify-content: space-between; /* Espaciado entre elementos */
+  align-items: stretch; 
+  margin-top: 20px; 
 }
 
 .form-wrapper {
-  background: rgba(106, 106, 106, 0.8); /* Fondo más oscuro para el formulario */
-  border-radius: 10px; /* Bordes redondeados */
-  padding: 20px; /* Espaciado interno */
-  max-width: 600px; /* Ancho máximo del formulario */
-  width: 100%; /* Hacer que el formulario ocupe el 100% de su contenedor */
-  margin: 20px; /* Añadir margen alrededor del formulario */
-  display: flex; /* Usar Flexbox para centrar el formulario */
-  flex-direction: column; /* Alinear elementos en columna */
-  align-items: stretch; /* Alinear horizontalmente */
+  background: rgba(106, 106, 106, 0.8);
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 1; /* Permitir que ocupe espacio disponible */
 }
 
-.social-container { 
+.social-container {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -369,6 +467,7 @@ inicio  */
   border-radius: 10px;
   text-align: center;
   overflow: hidden;
+  flex: 1; /* Permitir que ocupe espacio disponible */
 }
 
 .social-container::before {
@@ -377,48 +476,41 @@ inicio  */
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0); /* Ajusta el nivel de brillo */
-  z-index: 1; /* Detrás del contenido */
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
 .social-container h1,
 .social-container p,
 .social-icons {
   position: relative;
-  z-index: 2; /* Por encima del overlay */
-  color: #3cc324; /* Color brillante para los elementos internos */
-  font-size: 1.5em; /* Aumenta el tamaño de la fuente de h5 y p */
+  z-index: 2;
+  color: #3cc324;
+  font-size: 1.5em;
 }
-
-.social-icons i {
-  font-size: 2em; /* Aumenta el tamaño de los iconos */
-  margin: 0 10px; /* Espaciado entre iconos */
-}
-
-
-
-
-
 
 .social-icons {
-  margin-top: 10px; /* Espacio entre el título y los íconos */
-  text-align: center; /* Centrar íconos dentro del contenedor */
+  margin-top: 10px; 
+  text-align: center; 
+  display: flex; 
+  justify-content: center; 
+  flex-wrap: wrap; /* Permitir que los íconos se envuelvan en pantallas más pequeñas */
 }
 
 .form-group {
-  width: 100%; /* Hacer que el contenedor del campo ocupe todo el ancho */
-  max-width: 100%; /* Ancho máximo para los campos de formulario */
-  margin: 10px 0; /* Margen vertical entre los campos */
+  width: 100%;
+  max-width: 100%;
+  margin: 10px 0;
 }
 
 .form-control {
-  width: 100%; /* Hacer que el campo ocupe todo el ancho de su contenedor */
+  width: 100%;
   background-color: #444;
   color: #fff;
   border: 1px solid #555;
   border-radius: 8px;
   padding: 8px;
-  box-sizing: border-box; /* Asegurarse de que el padding no afecte el tamaño total */
+  box-sizing: border-box;
 }
 
 .form-group label {
@@ -432,7 +524,7 @@ inicio  */
 }
 
 .contact-btn {
-  width: auto; /* Hacer que el botón tenga un ancho automático */
+  width: auto;
   background-color: #6d6df5;
   border: none;
   transition: background-color 0.3s, transform 0.3s;
@@ -459,6 +551,40 @@ inicio  */
   transform: scale(1.2);
 }
 
+/* Media Query para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column; /* Apilar el formulario y los íconos sociales */
+  }
+
+  .form-wrapper {
+    margin: 10px; /* Reducir el margen en pantallas más pequeñas */
+  }
+
+  .social-container {
+    margin-top: 20px; /* Agregar espacio sobre la sección social */
+  }
+
+  .social-icons i {
+    font-size: 1.5em; /* Ajustar el tamaño de los íconos en pantallas más pequeñas */
+  }
+}
+
+/* Media Query para pantallas extra pequeñas (como móviles en orientación vertical) */
+@media (max-width: 480px) {
+  .social-container h1, .social-container p {
+    font-size: 1em; /* Ajustar el tamaño del texto */
+  }
+
+  .social-icons i {
+    font-size: 1.5em; /* Ajustar el tamaño de los íconos */
+  }
+
+  .contact-btn {
+    padding: 6px 16px;
+    font-size: 0.9em;
+  }
+}
 
 
 .alert-message {
@@ -544,15 +670,29 @@ inicio  */
 
 
 
-footer {
-  position: relative;
-  /* background-color: #6a696e; */
-  background: rgba(0, 0, 0, 0.8); /* Fondo más oscuro para el formulario */
+/* footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
   color: #ddd;
   padding: 20px;
   text-align: center;
   overflow: hidden;
+  z-index: 10;
+} */
+
+footer {
+  position: relative;
+  background: rgba(0, 0, 0, 0.8); /* Fondo del footer */
+  color: #ddd;
+  padding: 20px 20px 10px; /* Reduce el padding superior e inferior */
+  text-align: center;
+  overflow: hidden; /* Evita que se salga el contenido */
 }
+
+
 
 .footer-container {
   max-width: 1200px;
@@ -583,17 +723,16 @@ footer {
 
 
 
+/* Contenedor de las ondas */
 .waves {
   position: absolute;
-  top: 0; /* Posicionar en la parte superior del footer */
+  bottom: 0; /* Posicionar en la parte inferior del footer */
   left: 0;
   width: 100%;
-  height: 100%; /* Que ocupe toda la altura del footer */
-  overflow: hidden;
+  height: 100%; /* Ajusta la altura de las ondas según sea necesario */
   line-height: 0;
   z-index: 1;
 }
-
 .wave-svg {
   position: relative;
   display: block;
