@@ -266,9 +266,9 @@ section {
   }
   
   .linea {
-    width: 80%; /* Ancho de la línea */
+    width: 95%; /* Ancho de la línea */
     height: 2px; /* Grosor de la línea */
-    background-color: rgb(173, 112, 182); /* Color de la línea */
+    background-color: rgb(26, 160, 249); /* Color de la línea */
     margin: 10px auto; /* Centra la línea y deja un espacio */
     transition: background-color 0.3s, transform 0.3s; /* Transición suave */
   }
