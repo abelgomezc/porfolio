@@ -278,70 +278,118 @@ section {
     transform: scaleY(1.2); /* Aumenta ligeramente la altura de la línea al pasar el mouse */
   }
   
-/* 
-inicio  */
 
-#inicio {
-  position: relative;
-  height: 100vh; /* Altura total de la ventana */
-  overflow: hidden;
-}
 
-.carousel-inner {
-  height: 100%; /* Altura total del carrusel */
-}
-
-.carousel-item {
-  height: 100%; /* Cada item del carrusel ocupa el 100% del contenedor */
-}
-
-.carousel-item img {
-  width: 100%; /* Asegura que la imagen ocupe todo el ancho */
-  height: 80vh; /* Altura fija para todas las imágenes en escritorio */
-  object-fit: cover; /* Cubre el contenedor sin deformar */
-}
-
-.carousel-caption {
-  position: absolute;
-  bottom: 20%; /* Posiciona el texto más arriba */
-  left: 50%;
-  transform: translateX(-50%);
-  color: rgb(254, 207, 37);
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
-  text-align: center;
-  width: 90%; /* Asegura que el texto no se pegue a los bordes */
-}
-
-/* Ajustes para el tamaño de las leyendas */
-.carousel-caption h2 {
-  font-size: 2em; /* Tamaño de fuente base */
-}
-
-/* Media Query para pantallas más pequeñas */
-@media (max-width: 768px) {
+  #inicio {
+    position: relative;
+    height: 100vh; /* Altura total de la ventana */
+    overflow: hidden;
+  }
+  
+  .carousel-inner {
+    height: 100%; /* Altura total del carrusel */
+  }
+  
+  .carousel-item {
+    height: 100%; /* Cada item del carrusel ocupa el 100% del contenedor */
+  }
+  
   .carousel-item img {
-    height: 40vh; /* Altura menor en móviles, ajusta según sea necesario */
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho */
+    height: 80vh; /* Altura fija para todas las imágenes en escritorio */
+    object-fit: cover; /* Cubre el contenedor sin deformar */
   }
-
+  
   .carousel-caption {
-    bottom: 15%; /* Posición del texto en dispositivos más pequeños */
-    font-size: 1.2em; /* Tamaño de fuente más pequeño */
-    padding: 0 15px; /* Agrega padding */
+    position: absolute;
+    bottom: 20%; /* Posiciona el texto más arriba */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 90%; /* Asegura que el texto no se pegue a los bordes */
+    opacity: 0; /* Inicialmente oculto para la animación */
+    transition: opacity 0.10s ease; /* Transición suave para la opacidad */
   }
-}
-
-@media (max-width: 480px) {
-  .carousel-caption {
-    bottom: 10%; /* Aumenta el margen inferior */
-    font-size: 1em; /* Tamaño de fuente más pequeño para móviles */
+  
+  .carousel-item.active .carousel-caption {
+    opacity: 1; /* Hace visible el texto solo cuando la imagen es activa */
   }
-
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    width: 30px; /* Tamaño de las flechas */
-    height: 30px; /* Tamaño de las flechas */
+  
+  .welcome-message {
+    color: #00FF00; /* Color verde estilo Matrix */
+    font-size: 2.5em; /* Tamaño de fuente mayor para destacarlo */
+    font-family: 'Courier New', Courier, monospace; /* Fuente estilo Matrix */
+    position: relative; /* Cambia a posición relativa para evitar solapamiento */
+    z-index: 10; /* Asegúrate de que esté por encima de otros elementos */
+    animation: slideIn 1s forwards; /* Llama a la animación */
+    animation-delay: 0.5s; /* Demora para aparecer después del mensaje de bienvenida */
   }
-}
+  
+  .carousel-caption h2 {
+    font-size: 2em; /* Tamaño de fuente para el mensaje */
+    color: #00FF00; /* Color verde estilo Matrix */
+    text-shadow: 0 0 20px rgba(0, 255, 0, 1), 0 0 30px rgba(0, 255, 0, 0.7); /* Efecto neón */
+    opacity: 0; /* Inicialmente oculto */
+    animation: fadeIn 1s forwards, blink 1.5s infinite; /* Llama a las animaciones */
+    animation-delay: 1s; /* Demora para aparecer después del mensaje de bienvenida */
+  }
+  
+  /* Animaciones */
+  @keyframes slideIn {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+  
+  /* Ajustes para pantallas más pequeñas */
+  @media (max-width: 768px) {
+    .carousel-item img {
+      height: 40vh; /* Altura menor en móviles, ajusta según sea necesario */
+    }
+  
+    .carousel-caption {
+      bottom: 15%; /* Posición del texto en dispositivos más pequeños */
+      font-size: 1.2em; /* Tamaño de fuente más pequeño */
+      padding: 0 15px; /* Agrega padding */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .carousel-caption {
+      bottom: 10%; /* Aumenta el margen inferior */
+      font-size: 1em; /* Tamaño de fuente más pequeño para móviles */
+    }
+  
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      width: 30px; /* Tamaño de las flechas */
+      height: 30px; /* Tamaño de las flechas */
+    }
+  }
+  
 
 
 
@@ -505,7 +553,7 @@ inicio  */
 .social-icons {
   position: relative;
   z-index: 2;
-  color: #3cc324;
+  color: #ffa319;
   font-size: 1.5em;
 }
 
@@ -562,12 +610,12 @@ inicio  */
 .social-icons .social-icon {
   font-size: 1.5rem;
   margin: 0 10px;
-  color: #50fc00;
+  color: #ffa319;
   transition: transform 0.3s, color 0.3s;
 }
 
 .social-icons .social-icon:hover {
-  color: #00d6fc;
+  color: #ffffff;
   transform: scale(1.2);
 }
 
@@ -636,16 +684,15 @@ inicio  */
   color: #fff;
 }
 
-
 .proyecto_card {
   background-color: #333;
   border-radius: 10px;
   color: #fff;
-  width: 450px; /* Ajusta el ancho de la tarjeta */
+  width: 450px; /* Ancho de tarjeta para pantallas grandes */
   flex-shrink: 0;
-  padding: 10px; /* Reduce el padding */
+  padding: 10px;
   text-align: center;
-  margin: 0 1px; /* Mantén un margen lateral pequeño */
+  margin: 0 10px; /* Espacio entre tarjetas */
 }
 
 .proyecto_card img {
@@ -671,22 +718,52 @@ inicio  */
   background: none;
   border: none;
   color: #ffdd57;
-  font-size: 30px; /* Tamaño de la flecha */
+  font-size: 30px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 1000; /* Asegura que las flechas estén sobre las tarjetas */
+  z-index: 1000;
 }
 
 .owl-nav .owl-prev {
-  left: 30px; /* Ajusta la posición izquierda de la flecha izquierda */
-
+  left: 10px;
 }
 
 .owl-nav .owl-next {
-  right: 30px; /* Ajusta la posición derecha de la flecha derecha */
+  right: 10px;
 }
 
+/* Responsividad para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .proyecto_card {
+    width: 80%; /* Ajuste de ancho en pantallas pequeñas */
+    margin: 0 auto 15px; /* Espacio entre tarjetas y centrado */
+  }
+
+  .owl-nav button {
+    font-size: 20px; /* Ajusta el tamaño de las flechas */
+  }
+}
+
+@media (max-width: 480px) {
+  #proyectos {
+    padding: 10px 0;
+  }
+
+  .proyecto_card {
+    width: 90%; /* Ancho de tarjeta en móviles */
+    padding: 5px;
+  }
+
+  .button-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .button-container .btn {
+    font-size: 1.2em;
+  }
+}
 
 
 
