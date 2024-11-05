@@ -392,15 +392,15 @@ inicio  */
 
 /* Colores según el nivel */
 .barra.basico {
-  background-color: #f1c40f;
+  background-color: #55acef;
 }
 
 .barra.intermedio {
-  background-color: #3498db;
+  background-color: #0070bb;
 }
 
 .barra.avanzado {
-  background-color: #2ecc71;
+  background-color: #18914a;
 }
 
 
