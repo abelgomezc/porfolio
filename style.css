@@ -308,7 +308,8 @@ section {
     text-align: center;
     width: 90%; /* Asegura que el texto no se pegue a los bordes */
     opacity: 0; /* Inicialmente oculto para la animación */
-    transition: opacity 0.10s ease; /* Transición suave para la opacidad */
+    transition: opacity 0.5s ease; /* Transición suave para la opacidad */
+    z-index: 10; /* Asegúrate de que esté por encima de otros elementos */
   }
   
   .carousel-item.active .carousel-caption {
@@ -319,8 +320,6 @@ section {
     color: #00FF00; /* Color verde estilo Matrix */
     font-size: 2.5em; /* Tamaño de fuente mayor para destacarlo */
     font-family: 'Courier New', Courier, monospace; /* Fuente estilo Matrix */
-    position: relative; /* Cambia a posición relativa para evitar solapamiento */
-    z-index: 10; /* Asegúrate de que esté por encima de otros elementos */
     animation: slideIn 1s forwards; /* Llama a la animación */
     animation-delay: 0.5s; /* Demora para aparecer después del mensaje de bienvenida */
   }
@@ -371,16 +370,33 @@ section {
     }
   
     .carousel-caption {
-      bottom: 15%; /* Posición del texto en dispositivos más pequeños */
-      font-size: 1.2em; /* Tamaño de fuente más pequeño */
-      padding: 0 15px; /* Agrega padding */
+      bottom: 10%; /* Ajusta la posición del texto */
+      font-size: 1.5em; /* Tamaño de fuente más pequeño para dispositivos móviles */
+      padding: 0 10px; /* Agrega padding */
+      opacity: 1; /* Asegúrate de que el texto sea visible */
+    }
+  
+    .welcome-message {
+      font-size: 1.8em; /* Ajusta el tamaño del mensaje de bienvenida */
+    }
+  
+    .carousel-caption h2 {
+      font-size: 1.5em; /* Tamaño de fuente más pequeño para el mensaje */
     }
   }
   
   @media (max-width: 480px) {
     .carousel-caption {
-      bottom: 10%; /* Aumenta el margen inferior */
-      font-size: 1em; /* Tamaño de fuente más pequeño para móviles */
+      bottom: 5%; /* Ajusta la posición del texto */
+      font-size: 1.2em; /* Tamaño de fuente más pequeño para móviles */
+    }
+  
+    .welcome-message {
+      font-size: 1.5em; /* Ajusta el tamaño del mensaje de bienvenida */
+    }
+  
+    .carousel-caption h2 {
+      font-size: 1.2em; /* Tamaño de fuente más pequeño para el mensaje */
     }
   
     .carousel-control-prev-icon,
@@ -390,7 +406,6 @@ section {
     }
   }
   
-
 
 
 
