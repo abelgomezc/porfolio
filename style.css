@@ -137,20 +137,25 @@ nav {
       height: 100%;
       z-index: 0; /* Asegura que el canvas esté detrás del contenido */
   }
-/* Primera sección con margen superior mayor */
+
+    /* Asegura que la primera sección tenga un margen superior específico */
 section:first-of-type {
-  margin-top: 20px; /* Espacio adicional solo para la primera sección */
+  margin-top: 30px; /* Puedes ajustar este valor */
 }
+
+
 
 /* Estilo general para todas las secciones */
 section {
   position: relative;
   padding: 30px 10px;
-  margin-top: 1px; /* Espacio reducido entre las secciones */
+  margin-top: 1px; 
   z-index: 1;
   color: #fff;
   border-radius: 10px;
 }
+
+
 
 .sobre-mi {
     display: flex;
@@ -158,6 +163,17 @@ section {
     align-items: center;
     height: 100%;
     padding: 50px 20px;
+    margin-bottom: 0; 
+  
+} 
+
+/* Estilo específico para la sección "sobre-mi" */
+.sobre-mi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px; /* Puedes ajustar el relleno */
+  margin: 0; /* Sin margen adicional */
 }
 
 .sobre-mi-container {
@@ -277,13 +293,22 @@ section {
     background-color: #007bff; /* Cambia el color de la línea al pasar el mouse */
     transform: scaleY(1.2); /* Aumenta ligeramente la altura de la línea al pasar el mouse */
   }
+
   
 
 
+
+
+/* Estilo específico para la sección "inicio" */
+
+
+  
+
   #inicio {
     position: relative;
-    height: 100vh; /* Altura total de la ventana */
+    height: 100vh; 
     overflow: hidden;
+    margin-bottom: 0; 
   }
   
   .carousel-inner {
@@ -405,6 +430,8 @@ section {
       height: 30px; /* Tamaño de las flechas */
     }
   }
+
+  
   
 
 
