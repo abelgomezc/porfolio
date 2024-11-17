@@ -831,7 +831,7 @@ section {
 
 footer {
   position: relative;
-  background: rgba(0, 0, 0, 0.8); /* Fondo del footer */
+  background: rgba(42, 42, 42, 0); /* Fondo del footer */
   color: #ddd;
   padding: 20px 20px 10px; /* Reduce el padding superior e inferior */
   text-align: center;
@@ -888,7 +888,7 @@ footer {
 }
 
 .wave {
-  fill: #5a6cfb;
+  fill: #5c81bc;
   opacity: 0.9;
 }
 
