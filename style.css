@@ -931,7 +931,7 @@ footer {
   right: 20px; /* Distancia desde la derecha */
   width: 60px;
   height: 60px;
-  background-color: #25D366; /* Color verde de WhatsApp */
+  background-color: #2cb65f; /* Color verde de WhatsApp */
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -947,8 +947,8 @@ footer {
 }
 
 .whatsapp-button img {
-  width: 60%;
-  height: 70%;
+  width: 50%;
+  height: 50%;
 }
 
 /* Animación de latido */
@@ -959,7 +959,7 @@ footer {
   }
   50% {
       transform: scale(1.2);
-      box-shadow: 0 0 20px #25D366, 0 0 40px #25D366;
+      box-shadow: 0 0 20px #22da41, 0 0 40px #25D366;
   }
 }
 
