@@ -955,7 +955,7 @@ footer {
 @keyframes pulse {
   0%, 100% {
       transform: scale(1);
-      box-shadow: 0 0 10px #2ec129, 0 0 20px #25D366;
+      box-shadow: 0 0 10px #2fb12a, 0 0 20px #25D366;
   }
   50% {
       transform: scale(1.2);
