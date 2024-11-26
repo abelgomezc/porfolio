@@ -172,6 +172,37 @@ section {
     align-items: center;
 }
 
+.foto-container {
+  position: relative;
+  display: inline-block;
+}
+
+.foto img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.etiqueta-disponible {
+  position: absolute;
+  bottom: -10px; /* Posiciona debajo de la imagen */
+  left: 50%; /* Centra horizontalmente */
+  transform: translateX(-50%); /* Ajusta para centrar perfectamente */
+  background-color: #28a745; /* Color verde */
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 4px 12px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+
+
 .foto {
     flex: 1;
     display: flex;
@@ -180,12 +211,12 @@ section {
     padding-right: 20px;
 }
 
-.foto img {
+/* .foto img {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
-}
+} */
 
 .descripcion {
     flex: 2;
@@ -249,6 +280,32 @@ section {
         font-size: 0.9em;
     }
 }
+
+@media (max-width: 768px) {
+  .etiqueta-disponible {
+      font-size: 0.7rem;
+      padding: 3px 10px;
+      bottom: -8px; /* Ajuste menor en móviles */
+  }
+
+  .foto img {
+      width: 150px;
+      height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .etiqueta-disponible {
+      font-size: 0.6rem;
+      padding: 2px 8px;
+  }
+
+  .foto img {
+      width: 120px;
+      height: 120px;
+  }
+}
+
 
   
   .titulo {
