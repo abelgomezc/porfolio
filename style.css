@@ -655,7 +655,7 @@ section {
 .social-icons {
   position: relative;
   z-index: 2;
-  color: #ffa319;
+  color: #76f04a;
   font-size: 1.5em;
 }
 
@@ -712,12 +712,12 @@ section {
 .social-icons .social-icon {
   font-size: 1.5rem;
   margin: 0 10px;
-  color: #ff7504;
+  color: #76f548;
   transition: transform 0.3s, color 0.3s;
 }
 
 .social-icons .social-icon:hover {
-  color: #75f949;
+  color: #fafbfd;
   transform: scale(1.2);
 }
 
