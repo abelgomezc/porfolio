@@ -127,7 +127,7 @@ html::-webkit-scrollbar-thumb {
     position: absolute;
     right: 0;
     color: var(--beaver);
-    background-color: var(--jet);
+    background-color: #000000;
     width: 100%;
     animation: typing 4s steps(28) alternate infinite;
 }
@@ -137,6 +137,7 @@ html::-webkit-scrollbar-thumb {
         width: 0%;
     }
 }
+
 
 .container_parrafo-info {
     display: none;

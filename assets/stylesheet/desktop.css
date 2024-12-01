@@ -171,99 +171,10 @@ nav.nav_menu.not-active .flags__item img {
 
 
 
+@keyframes typing {
+    to {
+        width: 0; 
+    }
+}
+
 /* Formación */
-
-.formacion {
-    padding-bottom: 2rem;
-    position: relative;
-}
-
-.formacion h1 {
-    padding-top: 8rem;
-    font-size: 3rem;
-}
-
-.cards--formacion:hover {
-    border: 1px solid var(--beaver);
-    box-shadow: 0 10px 16px -6px rgb(5 5 5 / 30%), 0 25px 10px -24px rgb(5 5 5 / 10%);
-    transform: scale(1.1);
-    transition: .4s all;
-}
-
-/* Proyectos */
-
-.proyectos h1 {
-    padding-top: 8rem;
-    font-size: 3rem;
-}
-
-.puntos1-proyectos {
-    display: inline;
-    position: absolute;
-    width: 6rem;
-    margin: 20rem 0 0  1%;
-    background-attachment: fixed;
-}
-
-.puntos2-proyectos {
-    display: inline;
-    position: absolute;
-    width: 6rem;
-    margin: -3rem 0 0 93%;
-}
-
-.cards_container--proyectos {
-    flex-direction: row;
-    justify-content: center;
-}
-
-.cards--proyectos {
-    width: 40rem;
-    height: 40rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 0 1.5rem;
-    z-index: 1;
-}
-
-.text-portafolio {
-    margin-top: -3rem;
-}
-
-.container_btn--proyectos button {
-    width: auto;
-    padding-left: 3.5rem;
-    padding-right: 3.5rem;
-}
-
-/* Contacto */
-
-.contacto h1 {
-    padding: 8rem 0 2.5rem 0;
-    font-size: 3rem;
-}
-
-.container_box--contacto {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.container_img--contacto {
-    display: inline-block;
-    width: 60rem;
-    display: flex;
-    justify-content: center;
-}
-
-.container_img--contacto img {
-    width: 50rem;
-    object-fit: contain;
-}
-
-.container--contacto {
-    width: 50%;
-    margin: 0;
-    padding: 4rem 3rem;
-}
