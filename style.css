@@ -1,3 +1,19 @@
+
+@font-face {
+  font-family: 'Cooper Hewitt';
+  src: url('../fonts/CooperHewitt-Light.woff') format('woff'),
+  url('../fonts/CooperHewitt-Thin.woff') format('woff');
+}
+
+:root {
+  --white: #FFFFFF;
+  --light-grey: #D9D9D9;
+  --beaver: #A78976;
+  --black: #141414;
+  --eerie-black: #1F1F1F;
+  --jet: #292929;
+}
+
 /* Aplica flexbox al contenedor principal */
 body, html {
   display: flex;
@@ -340,7 +356,260 @@ section {
   }
 
   
+/* /////////////////////////////////////// */
 
+
+/* Contenedor de la imagen */
+.container_image-home {
+  position: relative;
+  width: 300px; /* Ajusta según el tamaño deseado */
+  height: auto;
+  display: inline-block;
+  overflow: hidden; /* Esconde cualquier parte fuera de los límites */
+  clip-path: inset(0); /* Corta los bordes visibles */
+}
+
+/* Imagen */
+.image_home {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: none; /* Sin bordes */
+  background: none; /* Asegúrate de que no hay fondo */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  border-radius: 50%; /* Ajusta para formas redondeadas (opcional) */
+  transform: scale(1.05); /* Ligera ampliación para realzar el efecto */
+}
+
+/* Efecto al pasar el ratón */
+.container_image-home:hover .image_home {
+  transform: scale(1.1); /* Agranda ligeramente */
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4); /* Sombra más intensa */
+}
+
+
+
+
+
+
+.active span:nth-child(1) {
+    animation: ease .7s top forwards;
+}
+
+.not-active span:nth-child(1) {
+    animation: ease .7s top-2 forwards;
+}
+
+.active span:nth-child(2) {
+    animation: ease .7s scaled forwards;
+}
+
+.not-active span:nth-child(2) {
+    animation: ease .7s scaled-2 forwards;
+}
+
+.active span:nth-child(3) {
+    animation: ease .7s bottom forwards;
+}
+
+.not-active span:nth-child(3) {
+    animation: ease .7s bottom-2 forwards;
+}
+
+@keyframes top {
+    0% {
+        top: 0;
+        transform: rotate(0);
+    }
+    50% {
+        top: 1rem;
+        transform: rotate(0);
+    }
+    100% {
+        top: 1rem;
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes top-2 {
+    0% {
+        top: .8rem;
+        transform: rotate(45deg);
+    }
+    50% {
+        top: .8rem;
+        transform: rotate(0deg);
+    }
+    100% {
+        top: 0;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes bottom {
+    0% {
+        bottom: 0;
+        transform: rotate(0);
+    }
+    50% {
+        bottom: .8rem;
+        transform: rotate(0);
+    }
+    100% {
+        bottom: .8rem;
+        transform: rotate(135deg);
+    }
+}
+
+@keyframes bottom-2 {
+    0% {
+        bottom: .8rem;
+        transform: rotate(135deg);
+    }
+    50% {
+        bottom: .8rem;
+        transform: rotate(0);
+    }
+    100% {
+        bottom: 0;
+        transform: rotate(0);
+    }
+}
+
+@keyframes scaled {
+    50% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes scaled-2 {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* Home */
+
+.home {
+ 
+  width: 100%;
+  height: auto;
+}
+
+.container_image-home {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  padding: 12rem 0 5rem 0;
+}
+
+.image_home {
+  max-width: 65%;
+  transition: .4s;
+  animation: image 2s;
+}
+
+.home_info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.home_text-1 {
+  font-family: 'Cooper Hewitt';
+  color: var(--white);
+  font-size: 2rem;
+}
+
+.home_text-2 {
+  font-family: 'PT Sans';
+  color: var(--beaver);
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+}
+
+.home_text-3 {
+  font-family: 'Cooper Hewitt';
+  color: var(--white);
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+  width: 28rem;
+  margin: 0 auto;
+  text-align: start;
+}
+
+.text-type {
+  position: relative;
+}
+
+.text-type::after {
+  content: '|';
+  font-weight: bold;
+  position: absolute;
+  right: 0;
+  color: var(--beaver);
+  background-color: var(--jet);
+  width: 100%;
+  animation: typing 4s steps(28) alternate infinite;
+}
+
+@keyframes typing {
+  to{
+      width: 0%;
+  }
+}
+
+.container_parrafo-info {
+  display: none;
+}
+
+.cv_button {
+  background-color: var(--beaver);
+  border-radius: 3rem;
+  padding: .6rem 2rem .5rem 2rem;
+  color: var(--jet);
+  font-family: 'Cooper Hewitt';
+  font-weight: bold;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  margin: 2rem 0;
+  border: none;
+  cursor: pointer;
+}
+
+.contact_button {
+  display: none;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0 6rem 0;
+}
+
+.links img {
+  width: 2.4rem;
+  margin: 0 .5rem;
+}
+
+.links .icon-CodePen {
+  width: 2.1rem;
+  margin-top: 2px;
+}
 
 
 
@@ -710,7 +979,7 @@ section {
 }
 
 .social-icons .social-icon {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   margin: 0 10px;
   color: #76f548;
   transition: transform 0.3s, color 0.3s;
