@@ -90,7 +90,8 @@ nav.nav_menu.not-active .flags__item img {
 .home_text-2 {
     font-size: 4rem;
     font-weight: bold;
-    color: var(--white);
+    color:#39FF14;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.7); /* Brillo para verde neón */
 }
 
 .home_text-3 {
@@ -98,6 +99,8 @@ nav.nav_menu.not-active .flags__item img {
     font-size: 1.8rem;
     width: 35rem;
     letter-spacing: .2rem;
+    color: #FFFFA1;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.7); /* Brillo para verde neón */
 }
 
 .container_parrafo-info {
@@ -111,6 +114,8 @@ nav.nav_menu.not-active .flags__item img {
     font-size: 1.4rem;
     letter-spacing: 1px;
     line-height: 2rem;
+    color: #6dc3e6;
+    text-shadow: 0 0 10px rgba(21, 110, 233, 0.7); /* Brillo para verde neón */
 }
 
 .container_button {

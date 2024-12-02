@@ -95,7 +95,7 @@ html::-webkit-scrollbar-thumb {
 
 .home_text-2 {
     font-family: 'PT Sans';
-    color: var(--beaver);
+    color: #39FF14;
     font-size: 2.5rem;
     margin-bottom: 1rem;
 }
