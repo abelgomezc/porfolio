@@ -115,7 +115,7 @@ nav.nav_menu.not-active .flags__item img {
     letter-spacing: 1px;
     line-height: 2rem;
     color: #6dc3e6;
-    text-shadow: 0 0 10px rgba(21, 110, 233, 0.7); /* Brillo para verde neón */
+    text-shadow: 0 0 10px rgba(103, 166, 255, 0.836); /* Brillo para verde neón */
 }
 
 .container_button {
@@ -138,7 +138,7 @@ nav.nav_menu.not-active .flags__item img {
 
 .contact_button {
     display: inline-block;
-    background-color: #007bff;
+    background-color: #4ccbfe;
     border-radius: 3rem;
     padding: .7rem 4rem .6rem 4rem;
     color: var(--jet);
