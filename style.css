@@ -788,8 +788,9 @@ section {
 .social-icons {
   position: relative;
   z-index: 2;
-  color: #76f04a;
+  color: #77da53;
   font-size: 1.5em;
+  text-shadow: 0 0 10px rgba(31, 254, 1, 0.836); /* Brillo para verde neón */
 }
 
 .social-icons {
