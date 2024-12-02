@@ -123,7 +123,7 @@ nav.nav_menu.not-active .flags__item img {
 }
 
 .cv_button {
-    background: #222729;
+    background: #0c0c0c;
     color: #007bff;
     border: 1px solid #007bff;
     margin-right: 1rem;
@@ -154,7 +154,7 @@ nav.nav_menu.not-active .flags__item img {
 }
 
 .contact_button:hover {
-    background-color: #776254;
+    background-color: #4df06e;
     box-shadow: 0px 2px 10px #141414;
     transition: 1s transform;
 }
