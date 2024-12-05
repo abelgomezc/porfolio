@@ -367,7 +367,21 @@
               <div class="barra basico">Básico</div>
             </div>
           </div>
-       
+
+          <!-- <div class="habilidad">
+            <img src="recursos/img/docker.svg" alt="docker" class="icono-svg">
+            <p>Docker</p>
+            <div class="nivel">
+              <div class="barra basico">Básico</div>
+            </div>
+          </div>
+          <div class="habilidad">
+            <img src="recursos/img/kubernetes.svg" alt="kubernetes" class="icono-svg">
+            <p>Kubernetes</p>
+            <div class="nivel">
+              <div class="barra basico">Básico</div>
+            </div>
+          </div> -->
     
           
         </div>
@@ -500,37 +514,45 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <script>
-    // Lista de proyectos
+
+  <!-- // proyectos  -->
+  <!-- <script>
+ 
     const proyectos = [
     {
+            nombre: " Consumo API Nasa con angular ",
+            imagen: "recursos/img/nasa1.png", // Asegúrate de que esta ruta es correcta
+            linkDemo: "https://abelgomezc.github.io/nasa-api-web/",
+            linkGithub: "https://github.com/abelgomezc/nasa-api.git"
+        },
+      {
             nombre: " Full Stack con Spring Boot, JWT y Angular",
             imagen: "recursos/img/springyangular.png", // Asegúrate de que esta ruta es correcta
-            linkDemo: "#",
+            linkDemo: "",
             linkGithub: "https://github.com/abelgomezc/angular-abel-securiy.git"
         },
       
         {
             nombre: "Sistema ERP Básico en Django - Administración y Gestión (Expandable)",
             imagen: "recursos/img/proyectodjango1.png", // Asegúrate de que esta ruta es correcta
-            linkDemo: "#",
+            linkDemo: "",
             linkGithub: "https://github.com/abelgomezc/ProjectoDjangoAbel.git"
         },
         {
             nombre: "Crud Estudiantes Ionic",
             imagen: "recursos/img/proyectoionic.jpg", // Asegúrate de que esta ruta es correcta
-            linkDemo: "#",
+            linkDemo: "",
             linkGithub: "https://github.com/abelgomezc/CRUD-SQLite-Ionic-main.git"
         },
         {
             nombre: "Gestión de Personas con Java y Swing",
             imagen: "recursos/img/crudpersona.png", // Asegúrate de que esta ruta es correcta
-            linkDemo: "#",
+            linkDemo: "",
             linkGithub: "https://github.com/abelgomezc/CrudPersona.git"
         },
      
         
-        // Agrega más proyectos según sea necesario
+        
     ];
 
     // Función para generar las tarjetas
@@ -569,8 +591,80 @@
             }
         });
     });
-</script>
+</script> -->
 
+<script> 
+  // Lista de proyectos
+  const proyectos = [
+      {
+          nombre: "Consumo API Nasa con angular",
+          imagen: "recursos/img/nasa1.png", // Asegúrate de que esta ruta es correcta
+          linkDemo: "https://abelgomezc.github.io/nasa-api-web/",
+          linkGithub: "https://github.com/abelgomezc/nasa-api.git"
+      },
+      {
+          nombre: "Full Stack con Spring Boot, JWT y Angular",
+          imagen: "recursos/img/springyangular.png", // Asegúrate de que esta ruta es correcta
+          linkDemo: "",
+          linkGithub: "https://github.com/abelgomezc/angular-abel-securiy.git"
+      },
+      {
+          nombre: "Sistema ERP Básico en Django - Administración y Gestión (Expandable)",
+          imagen: "recursos/img/proyectodjango1.png", // Asegúrate de que esta ruta es correcta
+          linkDemo: "",
+          linkGithub: "https://github.com/abelgomezc/ProjectoDjangoAbel.git"
+      },
+      {
+          nombre: "Crud Estudiantes Ionic",
+          imagen: "recursos/img/proyectoionic.jpg", // Asegúrate de que esta ruta es correcta
+          linkDemo: "",
+          linkGithub: "https://github.com/abelgomezc/CRUD-SQLite-Ionic-main.git"
+      },
+      {
+          nombre: "Gestión de Personas con Java y Swing",
+          imagen: "recursos/img/crudpersona.png", // Asegúrate de que esta ruta es correcta
+          linkDemo: "",
+          linkGithub: "https://github.com/abelgomezc/CrudPersona.git"
+      }
+  ];
+
+  // Función para generar las tarjetas
+  function generarTarjetas() {
+      const contenedor = document.getElementById("proyectos-carousel");
+
+      proyectos.forEach(proyecto => {
+          const card = document.createElement("div");
+          card.className = "proyecto_card"; // Clase CSS para el estilo de la tarjeta
+          card.innerHTML = `
+              <img src="${proyecto.imagen}" alt="${proyecto.nombre}">
+              <h5>${proyecto.nombre}</h5>
+              <div class="button-container">
+                  <a href="${proyecto.linkGithub}" class="btn btn-link"><i class="fab fa-github"></i></a>
+                  ${proyecto.linkDemo ? `<a href="${proyecto.linkDemo}" class="btn btn-link" target="_blank"><i class="fas fa-laptop"></i></a>` : ''}
+              </div>
+          `;
+          contenedor.appendChild(card);
+      });
+  }
+
+  // Llama a la función para generar las tarjetas
+  generarTarjetas();
+
+  // Inicializa el carrusel
+  $(document).ready(function(){
+      $("#proyectos-carousel").owlCarousel({
+          loop: true,
+          margin: 5, // Cambiado a 5 para reducir la separación
+          nav: true,
+          navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'], // Flechas personalizadas
+          responsive: {
+              0: { items: 1 },
+              600: { items: 2 },
+              1000: { items: 3 } // Ajusta el número de tarjetas visibles
+          }
+      });
+  });
+</script>
 
 
 <!-- mandar email  -->
