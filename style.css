@@ -136,59 +136,37 @@ nav {
       z-index: 0;
   }
 
- section:first-of-type {
-  margin-top: 30px;
-}
-
-
-
-section {
-  position: relative;
-  padding: 20px 15px;
-  margin-top: 1px; 
-  z-index: 1;
-  color: #fff;
-  border-radius: 10px;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1s ease, transform 1s ease;
-} 
-section:first-of-type {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 1s ease, transform 1s ease; /* Hacerla visible al cargar */
-}
-
-/* section {
-  position: relative;
-  padding: 20px 15px;
-  margin-top: 1px;
-  z-index: 1;
-  color: #fff;
-  border-radius: 10px;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1s ease, transform 1s ease;
-  background-color: rgba(0, 0, 0, 0.7);
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
-  width: 100%; 
-  max-width: 100%;
-} */
-
-
-
-/* Cuando la sección se muestra (visible) */
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Efecto hover */
-section:hover {
-  transform: scale(1.05);
-  /* box-shadow: 0 0 20px rgba(0, 255, 255, 0.8); */
-}
-
+  section:first-of-type {
+    margin-top: 30px;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease, transform 1s ease; /* Hacerla visible al cargar */
+  }
+  
+  section {
+    position: relative;
+    padding: 20px 15px;
+    margin-top: 1px;
+    z-index: 1;
+    color: #fff;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+  } 
+  
+  /* Cuando la sección se muestra (visible) */
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Efecto hover */
+  section:hover {
+    transform: scale(1.05);
+    /* box-shadow: 0 0 20px rgba(0, 255, 255, 0.8); */
+  }
+  
 
 .sobre-mi {
     display: flex;

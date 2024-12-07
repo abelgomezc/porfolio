@@ -828,20 +828,27 @@ function toggleMenu() {
 
 <script>
 
-  // Detecta cuando la sección entra en la vista
-window.addEventListener('scroll', function() {
+ // Función para detectar la visibilidad de las secciones
+function revealSections() {
   const sections = document.querySelectorAll('section');
-  const windowHeight = window.innerHeight;
   
-  sections.forEach(section => {
+  sections.forEach((section) => {
     const sectionTop = section.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
 
-    // Si la sección está visible en la ventana
-    if (sectionTop < windowHeight - 100) {
+    // Si la sección está visible en la pantalla, se agrega la clase 'visible'
+    if (sectionTop < windowHeight - 100  ) {  // Detectar cuando la sección entra en la vista
       section.classList.add('visible');
+    } else {
+      section.classList.remove('visible');  // Eliminar la clase cuando la sección sale de la vista
     }
   });
-});
+}
+
+// Llamamos a la función cuando la página carga y al hacer scroll
+window.addEventListener('load', revealSections);
+window.addEventListener('scroll', revealSections);
+
 
 </script>
 
