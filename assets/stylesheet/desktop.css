@@ -102,7 +102,7 @@ nav.nav_menu.not-active .flags__item img {
     font-weight: bold;
     color: #FFFFA1;
     text-shadow: 0 0 10px rgba(229, 249, 229, 0.7); 
-    background: linear-gradient(90deg, #fffeff, #fddc04, #00ee2c);
+    background: linear-gradient(90deg, #fffeff, #cf62fe, #00ee2c);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gradient-flow 3s infinite;
@@ -128,7 +128,7 @@ nav.nav_menu.not-active .flags__item img {
     /* color: #6dc3e6; */
     font-weight: bold;
     /* text-shadow: 0 0 10px rgba(254, 254, 254, 0.836); */
-    background: linear-gradient(90deg, #fbff00, #0256ff, #16ff1e);
+    background: linear-gradient(90deg, #fbff00, #ffffff, #d21195);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gradient-flow 3s infinite;
@@ -199,3 +199,5 @@ nav.nav_menu.not-active .flags__item img {
 }
 
 /* Formación */
+
+
