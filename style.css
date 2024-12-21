@@ -14,6 +14,7 @@
 body, html {
   overflow-x: hidden; /* Esto oculta el scroll horizontal */
   width: 100%;
+
 }
 * {
   box-sizing: border-box; /* Esto asegura que el padding y los márgenes no desborden el ancho del elemento */

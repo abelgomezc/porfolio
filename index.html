@@ -34,7 +34,7 @@
     <!-- Hojas de estilo -->
     <link rel="stylesheet" href="./assets/stylesheet/loader.css">
      <link rel="stylesheet" href="./assets/stylesheet/index.css">
-    <link rel="stylesheet" href="./assets/stylesheet/tablet.css" media="screen and (min-width: 760px)"> 
+    <!-- <link rel="stylesheet" href="./assets/stylesheet/tablet.css" media="screen and (min-width: 760px)">  -->
    <link rel="stylesheet" href="./assets/stylesheet/desktop.css" media="screen and (min-width: 980px)">
 
     <!-- Fuentes -->
@@ -45,6 +45,7 @@
     <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/ae0fd6f99f.js" crossorigin="anonymous"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
 
 
@@ -84,7 +85,8 @@
     </nav>
     
         <!-- Home -->
-        <section class="home" id="home">
+      <section class="home" id="home">
+ 
           <picture class="container_image-home" data-aos="zoom-in">
             <img class="image_home" src="./recursos/img/14s.png" alt="Ilustración de mí">
         </picture>
@@ -117,6 +119,10 @@
       </section>
 
     
+
+  
+
+
     <section id="sobre-mi" class="sobre-mi">
      
       <div class="matrix-container">
@@ -502,6 +508,8 @@
 </div>
 </footer>
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init();
@@ -716,7 +724,7 @@
 
  <!-- matrix -->
 
-<script>
+<!-- <script>
   window.onload = hacking;
 
   function hacking() {
@@ -769,8 +777,181 @@
 
       dibujar();
   }
-</script>
+</script> -->
+<!-- estrellas cayendo  -->
+<!-- <script>
+  window.onload = iniciarFondo;
 
+  function iniciarFondo() {
+      const c = document.getElementById("locoalien");
+      const contexto = c.getContext("2d");
+      c.width = window.innerWidth;
+      c.height = window.innerHeight;
+
+      const cantidadEstrellas = 200;
+      const estrellas = [];
+
+      // Crear estrellas aleatorias
+      for (let i = 0; i < cantidadEstrellas; i++) {
+          estrellas.push({
+              x: Math.random() * c.width,
+              y: Math.random() * c.height,
+              tamaño: Math.random() * 2 + 1,  // Estrellas con tamaños aleatorios
+              velocidad: Math.random() * 0.5 + 0.5  // Estrellas con velocidades aleatorias
+          });
+      }
+
+      // Ajustar el tamaño del canvas en el redimensionamiento de la ventana
+      window.addEventListener('resize', () => {
+          c.width = window.innerWidth;
+          c.height = window.innerHeight;
+      });
+
+      function dibujarEstrellas() {
+          contexto.fillStyle = "rgba(0, 0, 0, 0.1)"; // Fondo translúcido para limpiar
+          contexto.fillRect(0, 0, c.width, c.height);
+
+          contexto.fillStyle = "white"; // Estrellas de color blanco
+          contexto.strokeStyle = "white";
+          contexto.lineWidth = 0.5;
+
+          estrellas.forEach(estrella => {
+              // Dibujar las estrellas
+              contexto.beginPath();
+              contexto.arc(estrella.x, estrella.y, estrella.tamaño, 0, Math.PI * 2);
+              contexto.fill();
+
+              // Mover las estrellas hacia abajo (simula la caída)
+              estrella.y += estrella.velocidad;
+
+              // Resetear la estrella al tope de la pantalla si se sale por abajo
+              if (estrella.y > c.height) {
+                  estrella.y = -estrella.tamaño;
+                  estrella.x = Math.random() * c.width;
+              }
+          });
+
+          // Llamar a la función de dibujo nuevamente
+          requestAnimationFrame(dibujarEstrellas);
+      }
+
+      dibujarEstrellas();
+  }
+</script> -->
+<!-- conectado por particulas  -->
+<script>
+  window.onload = iniciarLineasConectadas;
+
+  function iniciarLineasConectadas() {
+      const c = document.getElementById("locoalien");
+      const contexto = c.getContext("2d");
+      c.width = window.innerWidth;
+      c.height = window.innerHeight;
+
+      const cantidadParticulas = 100;
+      const particulas = [];
+
+      for (let i = 0; i < cantidadParticulas; i++) {
+          particulas.push({
+              x: Math.random() * c.width,
+              y: Math.random() * c.height,
+              velocidadX: (Math.random() - 0.5) * 2,
+              velocidadY: (Math.random() - 0.5) * 2
+          });
+      }
+
+      function dibujarLineas() {
+          contexto.fillStyle = "rgba(0, 0, 0, 0.1)"; // Fondo translúcido
+          contexto.fillRect(0, 0, c.width, c.height);
+
+          for (let i = 0; i < particulas.length; i++) {
+              let p1 = particulas[i];
+
+              // Dibujar las partículas
+              contexto.beginPath();
+              contexto.arc(p1.x, p1.y, 2, 0, Math.PI * 2);
+              contexto.fillStyle = "#0ff";
+              contexto.fill();
+
+              // Dibujar líneas conectando las partículas cercanas
+              for (let j = i + 1; j < particulas.length; j++) {
+                  let p2 = particulas[j];
+                  let distancia = Math.sqrt(Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2));
+
+                  // Si las partículas están cerca, dibujamos una línea entre ellas
+                  if (distancia < 100) {
+                      contexto.beginPath();
+                      contexto.moveTo(p1.x, p1.y);
+                      contexto.lineTo(p2.x, p2.y);
+                      contexto.strokeStyle = `rgba(0, 255, 255, ${1 - distancia / 100})`; // Transparente a medida que se alejan
+                      contexto.lineWidth = 0.5;
+                      contexto.stroke();
+                  }
+              }
+
+              // Mover las partículas
+              p1.x += p1.velocidadX;
+              p1.y += p1.velocidadY;
+
+              // Rebotar partículas en los bordes
+              if (p1.x > c.width || p1.x < 0) p1.velocidadX = -p1.velocidadX;
+              if (p1.y > c.height || p1.y < 0) p1.velocidadY = -p1.velocidadY;
+          }
+
+          requestAnimationFrame(dibujarLineas);
+      }
+
+      dibujarLineas();
+  }
+</script>
+<!-- Líneas Rectangulares -->
+<!-- <script>
+  window.onload = iniciarLineasRectangulares;
+
+  function iniciarLineasRectangulares() {
+      const c = document.getElementById("locoalien");
+      const contexto = c.getContext("2d");
+      c.width = window.innerWidth;
+      c.height = window.innerHeight;
+
+      const lineas = [];
+      const cantidadLineas = 30;
+
+      for (let i = 0; i < cantidadLineas; i++) {
+          lineas.push({
+              x: Math.random() * c.width,
+              y: Math.random() * c.height,
+              velocidadX: (Math.random() - 0.5) * 2,
+              velocidadY: (Math.random() - 0.5) * 2,
+              largo: Math.random() * 100 + 50,
+              alto: Math.random() * 100 + 50
+          });
+      }
+
+      function dibujarRectangulos() {
+          contexto.fillStyle = "rgba(0, 0, 0, 0.05)"; // Fondo translúcido
+          contexto.fillRect(0, 0, c.width, c.height);
+
+          lineas.forEach(linea => {
+              contexto.beginPath();
+              contexto.rect(linea.x, linea.y, linea.largo, linea.alto);
+              contexto.strokeStyle = "#fff";
+              contexto.lineWidth = 2;
+              contexto.stroke();
+
+              linea.x += linea.velocidadX;
+              linea.y += linea.velocidadY;
+
+              if (linea.x > c.width || linea.x < 0) linea.velocidadX = -linea.velocidadX;
+              if (linea.y > c.height || linea.y < 0) linea.velocidadY = -linea.velocidadY;
+          });
+
+          requestAnimationFrame(dibujarRectangulos);
+      }
+
+      dibujarRectangulos();
+  }
+</script> -->
 
 
 
@@ -809,6 +990,9 @@ window.addEventListener('scroll', revealSections);
 
 
 </script>
+
+
+
 
 </body>
 
