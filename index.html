@@ -957,23 +957,30 @@
   const canvas = document.getElementById('locoalien');
   const ctx = canvas.getContext('2d');
   let estrellas = [];
-  const maxEstrellas = 150;  // Número de estrellas en movimiento
+  const maxEstrellas = 150;  // Número máximo de estrellas
   const distanciaConectar = 150;  // Distancia máxima para conectar las estrellas
 
   // Ajustar el tamaño del canvas
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  function ajustarCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+  }
 
   // Generar las estrellas
-  for (let i = 0; i < maxEstrellas; i++) {
-      estrellas.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          velocidadX: (Math.random() - 0.5) * 0.5, // Velocidad de movimiento en el eje X
-          velocidadY: (Math.random() - 0.5) * 0.5, // Velocidad de movimiento en el eje Y
-          radio: 1 + Math.random() * 2,  // Tamaño de las estrellas
-          opacidad: Math.random() * 0.5 + 0.3,  // Opacidad de las estrellas
-      });
+  function generarEstrellas() {
+      estrellas = [];
+      const numEstrellas = (window.innerWidth < 600) ? 80 : maxEstrellas; // Menos estrellas en pantallas pequeñas
+
+      for (let i = 0; i < numEstrellas; i++) {
+          estrellas.push({
+              x: Math.random() * canvas.width,
+              y: Math.random() * canvas.height,
+              velocidadX: (Math.random() - 0.5) * 0.5,
+              velocidadY: (Math.random() - 0.5) * 0.5,
+              radio: (Math.random() * 2) + (window.innerWidth < 600 ? 1 : 2),  // Menor tamaño de estrellas en pantallas pequeñas
+              opacidad: Math.random() * 0.5 + 0.3,
+          });
+      }
   }
 
   // Función para dibujar las estrellas
@@ -1021,8 +1028,15 @@
       requestAnimationFrame(dibujarEstrellas);
   }
 
-  // Iniciar el dibujo de las estrellas
-  dibujarEstrellas();
+  // Inicializar
+  window.addEventListener('resize', () => {
+      ajustarCanvas();
+      generarEstrellas();
+  });
+
+  ajustarCanvas();  // Ajustar el tamaño del canvas
+  generarEstrellas();  // Generar las estrellas
+  dibujarEstrellas();  // Iniciar el dibujo de las estrellas
 </script>
 
 
