@@ -839,7 +839,7 @@
   }
 </script> -->
 <!-- conectado por particulas  -->
-<script>
+<!-- <script>
   window.onload = iniciarLineasConectadas;
 
   function iniciarLineasConectadas() {
@@ -903,7 +903,7 @@
 
       dibujarLineas();
   }
-</script>
+</script> -->
 <!-- Líneas Rectangulares -->
 <!-- <script>
   window.onload = iniciarLineasRectangulares;
@@ -953,7 +953,77 @@
   }
 </script> -->
 
+<script>
+  const canvas = document.getElementById('locoalien');
+  const ctx = canvas.getContext('2d');
+  let estrellas = [];
+  const maxEstrellas = 150;  // Número de estrellas en movimiento
+  const distanciaConectar = 150;  // Distancia máxima para conectar las estrellas
 
+  // Ajustar el tamaño del canvas
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  // Generar las estrellas
+  for (let i = 0; i < maxEstrellas; i++) {
+      estrellas.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          velocidadX: (Math.random() - 0.5) * 0.5, // Velocidad de movimiento en el eje X
+          velocidadY: (Math.random() - 0.5) * 0.5, // Velocidad de movimiento en el eje Y
+          radio: 1 + Math.random() * 2,  // Tamaño de las estrellas
+          opacidad: Math.random() * 0.5 + 0.3,  // Opacidad de las estrellas
+      });
+  }
+
+  // Función para dibujar las estrellas
+  function dibujarEstrellas() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);  // Limpiar el canvas
+
+      // Dibujar las estrellas
+      for (let i = 0; i < estrellas.length; i++) {
+          const estrella = estrellas[i];
+          ctx.beginPath();
+          ctx.arc(estrella.x, estrella.y, estrella.radio, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(255, 255, 255, ${estrella.opacidad})`;
+          ctx.fill();
+
+          // Mover las estrellas
+          estrella.x += estrella.velocidadX;
+          estrella.y += estrella.velocidadY;
+
+          // Si una estrella se sale de los límites del canvas, la reiniciamos en el lado opuesto
+          if (estrella.x > canvas.width) estrella.x = 0;
+          if (estrella.x < 0) estrella.x = canvas.width;
+          if (estrella.y > canvas.height) estrella.y = 0;
+          if (estrella.y < 0) estrella.y = canvas.height;
+
+          // Conectar estrellas cercanas con líneas
+          for (let j = i + 1; j < estrellas.length; j++) {
+              const otraEstrella = estrellas[j];
+              const distancia = Math.sqrt(
+                  Math.pow(estrella.x - otraEstrella.x, 2) +
+                  Math.pow(estrella.y - otraEstrella.y, 2)
+              );
+
+              if (distancia < distanciaConectar) {
+                  ctx.beginPath();
+                  ctx.moveTo(estrella.x, estrella.y);
+                  ctx.lineTo(otraEstrella.x, otraEstrella.y);
+                  ctx.strokeStyle = `rgba(255, 255, 255, ${1 - distancia / distanciaConectar})`;
+                  ctx.lineWidth = 0.5;
+                  ctx.stroke();
+              }
+          }
+      }
+
+      // Llamar la función de nuevo para el siguiente cuadro
+      requestAnimationFrame(dibujarEstrellas);
+  }
+
+  // Iniciar el dibujo de las estrellas
+  dibujarEstrellas();
+</script>
 
 
 <script>

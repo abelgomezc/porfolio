@@ -12,14 +12,23 @@
 
 
 body, html {
-  overflow-x: hidden; /* Esto oculta el scroll horizontal */
+  overflow-x: hidden; 
   width: 100%;
+  background: black;
 
 }
 * {
-  box-sizing: border-box; /* Esto asegura que el padding y los márgenes no desborden el ancho del elemento */
+  box-sizing: border-box; 
 }
 
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
 
 
 main {
@@ -128,14 +137,7 @@ nav {
 
 
     /* Secciones */
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-  }
+ 
 
   section:first-of-type {
     margin-top: 30px;
