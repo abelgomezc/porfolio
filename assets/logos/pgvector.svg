@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="pgvector">
+  <g fill="none" stroke="#336791" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8 38V20l8-8h12" />
+    <path d="M8 38h10l6-6" />
+    <path d="M30 30l10-10M30 30h10v-10" />
+  </g>
+  <g fill="#79aec8">
+    <circle cx="8" cy="38" r="2.5" />
+    <circle cx="40" cy="20" r="2.5" />
+    <circle cx="18" cy="38" r="2.5" />
+  </g>
+</svg>

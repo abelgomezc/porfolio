@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="Kilo Code">
+  <rect x="4" y="8" width="40" height="32" rx="8" fill="none" stroke="#33c2cc" stroke-width="3" />
+  <g fill="none" stroke="#33c2cc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 18l7 6-7 6" />
+    <path d="M27 31h7" />
+  </g>
+</svg>

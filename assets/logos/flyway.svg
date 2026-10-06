@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="Flyway">
+  <g fill="none" stroke="#e8a33d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 30c6-2 9-8 12-14 2 4 3 7 6 8 3 1 7 0 11-2" />
+    <path d="M8 38c8-2 12-6 16-12" />
+  </g>
+  <circle cx="35" cy="13" r="3.5" fill="#e8a33d" />
+</svg>
